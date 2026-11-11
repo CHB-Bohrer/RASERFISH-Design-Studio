@@ -1,0 +1,26 @@
+{
+  "schema": "raserfish.scientific-source-baseline.v1",
+  "baseline_version": "1.5.0",
+  "method": "SHA-256 of UTF-8 ast.get_source_segment for named top-level definitions; whole-file SHA-256 for unchanged scientific modules. Expected hashes recorded before v1.6 edits, from original v1.5 source. No absolute source paths required to run tests.",
+  "design_engine_definition_sha256": {
+    "local_qc": "0e864bc860c942277d152aabc0922a59e73ec8946fada1112c98b697322fd2f2",
+    "summarize_specificity": "58283077538c1f8c80f244bd54b17ebe51b50ea32d92ac54c24924cfaf4b3855",
+    "enrich_hit": "ad6582fd6bc6cac65f450f73d8ec36cae5c843ca303a4308b07a5338e1ed241e",
+    "duplex_estimate": "659f4eda6ad2d4bf82f8c5d4b6f421df4ffadb4264b8c96f0a52dab91936f859",
+    "Folding": "ff288525593b514e961bf55ffe93cfaaafd4e479a75838fb88d4fbf0586e06c8",
+    "footprint": "08e5c8cb0005c3575f6d3562b5b462f6a108dae8c8dc7901b20a4a951e836d4f",
+    "exact_sites": "f3f49d35675695b797c9cdcb191b46111dd20c8c00a47cb47690bd21ceba48ae",
+    "same_bin_site": "6b8881a26931f483919d8707e31fc41153971c74684e245a5a807083d64ae442",
+    "footprints_conflict": "12defca08729229449ccc45f65c380539297d0bcb18d955595577d601336860c",
+    "expected_hit": "57f5b6d222f39dee93bbcc70550542f274b7ea7d6e3487526082b213dedcfb66",
+    "perfect_tracts": "627d1b9fbac505a649d17c83eec16f0c5f60b4330bc34a6912a3375d54ec7e90",
+    "cluster_hits": "41b1c20e9bda04ac9dd3a5027bb47b957a020f42671deab93ddc43187c2161bc"
+  },
+  "unchanged_file_sha256": {
+    "strand_guard.py": "1e73e7bca0e43374369900f929b3f535ba19d29dfe244a11436261f1d39260d7",
+    "rna_avoidance.py": "21596d291d99563efab96d7cbb693f09607aa64a1b580cb909b87b3eb3014f63",
+    "engine/oligominer_thermo_qc.py": "d3de6b820290ebbe2cdc0fc805c5eaf04b9b15d8344ab0ae67fe5518a506d7b8",
+    "engine/qc_core.py": "f4a0b72e5bc66a54cd70dc13863f124c6c747f7752fb3b522359cd2470f703cf"
+  },
+  "baseline_design_engine_sha256": "845c461f9e81f3e0dee2249a2a21bcf54bb2ae90ed9d9d34904e50ecf6b864e4"
+}

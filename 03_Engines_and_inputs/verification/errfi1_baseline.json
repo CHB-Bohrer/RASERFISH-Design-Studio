@@ -1,0 +1,858 @@
+{
+  "schema": "raserfish.errfi1-baseline.v1",
+  "observed_at_utc": "2026-10-15T15:40:28.819453+00:00",
+  "purpose": "Read-only evidence from saved ERRFI1 run and original v1.5 source. This is not a new full-QC run or confirmation of complete prior export.",
+  "source_app_path": "<local-path-omitted>",
+  "source_run_path": "<local-path-omitted>",
+  "source_run_id": "20261015_100112_62f902",
+  "policy_exact": {
+    "mode": "full",
+    "selection_goal": "maximize_sites",
+    "target_per_bin": 100,
+    "minimum_per_bin": 50,
+    "threads": 4,
+    "profile": "oligominer1_2nM",
+    "tm_min": 45,
+    "tm_max": 55,
+    "tm_strict": true,
+    "gc_min": 0,
+    "gc_max": 76,
+    "length_mode": "adaptive",
+    "arm_min": 36,
+    "preferred_arm_max": 42,
+    "arm_max": 90,
+    "bound_strand": "+",
+    "homopolymer_max": 5,
+    "candidate_step": 1,
+    "variants_per_start": 2,
+    "shortlist_per_bin": 160,
+    "extension_shortlist_per_bin": 80,
+    "max_total_candidates": 5000,
+    "minimum_gap": 5,
+    "footprint": "extended",
+    "repeat_policy": "within_bin",
+    "high_offtarget_tm": 42,
+    "max_high_offtarget_sites": 0,
+    "moderate_offtarget_tm": 35,
+    "max_moderate_offtarget_sites": 10,
+    "reject_unknown_long": true,
+    "screen_rna": true,
+    "rna_exact_min": 18,
+    "max_strong_rna_sites": 0,
+    "minimum_arm_unpaired": 0.4,
+    "minimum_cofold_gain": -12,
+    "maximum_pair_stem": 11,
+    "folding_temperature": 42,
+    "sodium_M": 0.39,
+    "avoid_gene_rna": false,
+    "preset_id": "adaptive_45_55",
+    "human_policy": "intended_only",
+    "allow_unresolved_bins": false
+  },
+  "scientific_policy_exact": {
+    "profile": "oligominer1_2nM",
+    "tm_min": 45,
+    "tm_max": 55,
+    "tm_strict": true,
+    "gc_min": 0,
+    "gc_max": 76,
+    "length_mode": "adaptive",
+    "arm_min": 36,
+    "preferred_arm_max": 42,
+    "arm_max": 90,
+    "bound_strand": "+",
+    "homopolymer_max": 5,
+    "minimum_gap": 5,
+    "footprint": "extended",
+    "repeat_policy": "within_bin",
+    "human_policy": "intended_only",
+    "high_offtarget_tm": 42,
+    "max_high_offtarget_sites": 0,
+    "moderate_offtarget_tm": 35,
+    "max_moderate_offtarget_sites": 10,
+    "reject_unknown_long": true,
+    "screen_rna": true,
+    "rna_exact_min": 18,
+    "max_strong_rna_sites": 0,
+    "minimum_arm_unpaired": 0.4,
+    "minimum_cofold_gain": -12,
+    "maximum_pair_stem": 11,
+    "folding_temperature": 42,
+    "sodium_M": 0.39,
+    "avoid_gene_rna": false,
+    "allow_unresolved_bins": false
+  },
+  "layout_exact": {
+    "bin_width": 20000,
+    "tail_policy": "strict",
+    "bounds": {
+      "chr1_7820001_8220000": [
+        189019,
+        209018
+      ]
+    },
+    "allowed_intervals": [],
+    "transcription": {
+      "chr1_7820001_8220000": {
+        "mode": "annotations",
+        "confirmed": false,
+        "intervals": []
+      }
+    }
+  },
+  "reference_metadata": [
+    {
+      "id": "chr1_7820001_8220000",
+      "description": "GRCh38 chr1:7820001-8220000",
+      "length": 400000,
+      "sha256": "37f890a441aeec7ff50953ec4683562ebd3e7f4fb744d61e73005691a420e836",
+      "mapping": {
+        "assembly": "GRCh38",
+        "chromosome": "chr1",
+        "start": 7820001,
+        "end": 8220000,
+        "orientation": "+",
+        "verified": true
+      },
+      "source": {
+        "provider": "UCSC",
+        "url": "https://api.genome.ucsc.edu/getData/sequence?genome=hg38;chrom=chr1;start=7820000;end=8220000",
+        "loaded_utc": "2026-10-14T19:27:59.718042+00:00"
+      },
+      "gene_annotation": {
+        "status": "FETCHED",
+        "provider": "Ensembl",
+        "url": "https://rest.ensembl.org/overlap/region/human/1:7820001-8220000?feature=gene;feature=transcript;feature=exon;content-type=application/json",
+        "assembly": "GRCh38",
+        "loaded_utc": "2026-10-14T19:28:37.503000+00:00",
+        "cell_specific": false
+      }
+    }
+  ],
+  "active_region_readout": {
+    "region": "chr1_7820001_8220000_B001",
+    "imager": "DP1"
+  },
+  "dp1_inventory_exact": {
+    "id": "DP1",
+    "sequence": "CTAACGAATCGG",
+    "docking": "CCGATTCGTTAG",
+    "imager_sequence_5to3": "CTAACGAATCGG",
+    "docking_sequence_5to3": "CCGATTCGTTAG",
+    "input_kind": "imager",
+    "input_sequence_5to3": "CTAACGAATCGG",
+    "sequence_orientation": "5to3",
+    "dye": "atto565N",
+    "source": "User imager inventory"
+  },
+  "parameter_provenance": {
+    "preset_id": "adaptive_45_55",
+    "label": "Adaptive high-yield / 45-55 C (user settings)",
+    "modified_fields": {},
+    "notes": [
+      {
+        "setting": "Preferred DNA-binding-arm length",
+        "value": "36-42 nt, with adaptive longer alternatives",
+        "origin": "PAPER BASE RANGE / USER ADAPTATION",
+        "explanation": "The preferred short range is retained. New candidates may be extended and rechecked to recover useful sites; an existing ordered sequence is never silently lengthened."
+      },
+      {
+        "setting": "Maximum adaptive arm length",
+        "value": "90 nt, adjustable",
+        "origin": "PROJECT SEARCH CEILING, NOT PAPER LIMIT",
+        "explanation": "This is the maximum genomic arm, not the full primary. The program checks lengths one base at a time and favors short feasible alternatives; it does not turn every probe into a 90-mer."
+      },
+      {
+        "setting": "Current on-target Tm selection window",
+        "value": "45-55 C; strict endpoints",
+        "origin": "NEW USER REQUIREMENT",
+        "explanation": "This replaces 42-50 C for the active default. Salt, concentration, formamide correction, aqueous folding temperature and off-target thresholds are unchanged."
+      },
+      {
+        "setting": "Count-selection goal",
+        "value": "More compatible exact binding sites",
+        "origin": "NEW USER REQUIREMENT",
+        "explanation": "Compare a short-arm baseline, longer infill and two joint greedy searches. Keep the highest-site-count feasible result. Count targets are benchmarks unless capped-count mode is selected; no global-optimum or brighter-signal guarantee."
+      },
+      {
+        "setting": "Published comparison window (not the current user default)",
+        "value": "42-50 C; strict software comparisons",
+        "origin": "PAPER WINDOW / SOFTWARE BOUNDS",
+        "explanation": "The separately selectable Ellenberg-informed preset reports 42-50 C accounting for 2xSSC and 50% formamide. Strict endpoints are inherited OligoMiner-style implementation details."
+      },
+      {
+        "setting": "Tm model and concentration",
+        "value": "DNA_NN3; 390 mM sodium; 2 nM probe / trace target; 50% FA x 0.65 C/%",
+        "origin": "EXPLICIT IMPLEMENTATION / PROJECT ASSUMPTIONS",
+        "explanation": "The paper does not give its complete thermodynamic command line. 2 nM per primary is a reported experimental concentration; using it with trace target is our modeling choice, not proof of the paper's calculation. Default 25/25 nM software comparison remains selectable."
+      },
+      {
+        "setting": "Arm GC limits",
+        "value": "No independent minimum (0%); maximum 76%",
+        "origin": "INHERITED PROJECT FALLBACK",
+        "explanation": "The paper does not report primary-arm GC cutoffs. The 76% cap is documented in our expanded G5 audit; a precise cap was not established for the earliest pilot. The paper's 40-50% GC rule applies to short imagers, NOT primary binding arms. Tm still constrains low-GC candidates."
+      },
+      {
+        "setting": "Primary footprint spacing",
+        "value": "At least 5 bp; extended footprint",
+        "origin": "USER REQUIREMENT, STRICTER THAN PAPER",
+        "explanation": "The paper used at least 2 nt spacing. We retain your requested 5 bp and include contiguous spacer/handle matching. Tracing regions themselves remain adjacent."
+      },
+      {
+        "setting": "Identical-base / simple-repeat filters",
+        "value": "At most 5 consecutive identical bases; exclude 8 dinucleotide units",
+        "origin": "INHERITED PROJECT HEURISTICS",
+        "explanation": "These are project sequence-quality filters. The paper's separate short-imager filters are not substituted for primary-arm rules."
+      },
+      {
+        "setting": "Region width and target oligo count",
+        "value": "User-chosen separately in steps 2 and 4",
+        "origin": "USER LAYOUT / PAPER EXAMPLE AVAILABLE",
+        "explanation": "The paper reports up to 100 primaries in 10 kb per position. A separate button applies that planning example. It is not forced on short construct inputs or on a user-chosen tracing resolution."
+      },
+      {
+        "setting": "Trace-wide strand and RNA policy",
+        "value": "One fixed DNA strand; transcript-sequence screening ON; whole-gene exclusion OFF by default",
+        "origin": "USER REQUIREMENT / REVISED PROJECT POLICY",
+        "explanation": "All tracing probes keep the same chosen DNA-bound strand. Gene spans do not automatically exclude candidates in the default mode. Long/high-identity complementary RNA matches still affect selection; isolated 18-nt hits are review evidence. Strict span exclusion remains optional. No RNA-free or allele-identity guarantee."
+      },
+      {
+        "setting": "Off-target / folding / pair thresholds",
+        "value": "Displayed project QC heuristics retained",
+        "origin": "PROJECT HEURISTICS, NOT PAPER REPRODUCTION",
+        "explanation": "The paper reports a 42 C LDA model at 0.8 and 5 or 10 off-target 18-mers. This program does not implement that complete LDA/k-mer pipeline. Its BLAST, off-target Tm, aqueous folding and pair gates are labeled separately."
+      }
+    ],
+    "sources": {
+      "user_update": "User request, 13-14 October 2026: fixed trace-wide strand, transcript-only RNA policy available/default in 1.5; permit longer arms when useful to meet remaining criteria and increase compatible binding-site count; change selection Tm window to 45-55 C.",
+      "paper": "Beckwith et al., Nature Communications 16:6673 (2025), Primary FISH probe design and Non-denaturing FISH; DOI 10.1038/s41467-025-61689-y.",
+      "initial_record": "RASERFISH_primary_probe_design_parameters_and_logic.pdf, sections 3-6: initial 68-oligo pilot used mostly 36-42 nt candidates; four long R2 additions were exceptions.",
+      "project_audit": "REVIEW_README.txt, G5 arm-selection audit: 36-90 nt, GC <=76%, no explicit lower GC cutoff, no homopolymer >=6; inherited expanded-project settings, not claimed original paper settings."
+    },
+    "explicit_nonimplementation": [
+      "Complete Ellenberg command line not recovered",
+      "OligoMiner LDA not implemented",
+      "Whole-genome k-mer pipeline not implemented"
+    ],
+    "statement": "Reported paper values are distinguished from project/user choices. Selecting a preset is not experimental validation."
+  },
+  "prior_result_observations": {
+    "selected_primaries_count": 41,
+    "selected_binding_site_rows": 41,
+    "selected_readout_counts": {
+      "DP1": 41
+    },
+    "selected_strand_counts": {
+      "'+": 41
+    },
+    "region_summary_rows": [
+      {
+        "Region": "chr1_7820001_8220000_B001",
+        "Reference": "chr1_7820001_8220000",
+        "Start": "189019",
+        "End": "209018",
+        "Width_bp": "20000",
+        "Imager": "DP1",
+        "probes": "41",
+        "exact_sites": "41",
+        "coverage_percent": "7.785",
+        "longest_gap": "2444",
+        "centroid": "197612.56097560975",
+        "centroid_offset": "-1405.9390243902453",
+        "distribution": "[5,5,8,5,5,1,2,1,6,3]",
+        "shortfall_to_target": "59",
+        "below_minimum": "True",
+        "median_tm": "49.18000000000001",
+        "bottom_strand_sites": "0",
+        "top_strand_sites": "41",
+        "extended_primaries": "11",
+        "min_arm_length": "36",
+        "max_arm_length": "43"
+      }
+    ],
+    "strand_consistency": {
+      "version": "1.0",
+      "status": "PASS_SEQUENCE_ORIENTATION",
+      "required_bound_strand": "+",
+      "selected_primaries": 41,
+      "top_sites": 41,
+      "bottom_sites": 0,
+      "opposite_strand_sites": 0,
+      "genomic_strand_by_chromosome": {
+        "NC_000001.11": "+"
+      },
+      "per_region": [
+        {
+          "Region": "chr1_7820001_8220000_B001",
+          "Reference": "chr1_7820001_8220000",
+          "Required_bound_strand": "+",
+          "Top_sites": 41,
+          "Bottom_sites": 0,
+          "Status": "PASS_SEQUENCE_ORIENTATION"
+        }
+      ],
+      "scope": "One fixed reference-relative target strand across this run. Mapped fragments on the same chromosome are checked for a consistent genomic strand. Unmapped construct-fragment connectivity is not inferred. Other independent runs must use the same global strand and be checked together. This does not identify maternal/paternal homologs or guarantee one chromatid experimentally."
+    },
+    "final_export_files_presence": {
+      "design_result.json": false,
+      "RASERFISH_Design_Results.html": false,
+      "READ_ME_RESULT.txt": false
+    },
+    "run_status_files": [
+      "run.log"
+    ],
+    "run_log_lines": [
+      "2026-10-15T14:01:12.219235+00:00 Enumerating alternatives before QC; the historical 163-probe order is not edited.",
+      "2026-10-15T14:02:32.088703+00:00 chr1_7820001_8220000_B001: 240 detailed-QC candidates (80 extended); all lengths use the same QC rules.",
+      "2026-10-15T14:02:32.664081+00:00 Local full-arm and junction checks: 1/240",
+      "2026-10-15T14:02:32.914749+00:00 Local full-arm and junction checks: 50/240",
+      "2026-10-15T14:02:32.932871+00:00 Local full-arm and junction checks: 100/240",
+      "2026-10-15T14:02:32.944777+00:00 Local full-arm and junction checks: 150/240",
+      "2026-10-15T14:02:33.277769+00:00 Local full-arm and junction checks: 200/240",
+      "2026-10-15T14:02:33.286595+00:00 Local full-arm and junction checks: 240/240",
+      "2026-10-15T14:02:33.333455+00:00 BLAST: human; binding arms AND full-primary junctions. This can take time.",
+      "2026-10-15T14:39:03.023275+00:00 BLAST: rna_human; binding arms AND full-primary junctions. This can take time.",
+      "2026-10-15T14:42:52.687019+00:00 Monomer/self-pair checks: 1/240",
+      "2026-10-15T14:44:06.639957+00:00 Monomer/self-pair checks: 50/240",
+      "2026-10-15T14:45:45.662293+00:00 Monomer/self-pair checks: 100/240",
+      "2026-10-15T14:46:51.275027+00:00 Monomer/self-pair checks: 150/240",
+      "2026-10-15T14:48:37.130043+00:00 Monomer/self-pair checks: 200/240",
+      "2026-10-15T14:49:53.409639+00:00 Monomer/self-pair checks: 240/240",
+      "2026-10-15T14:49:53.412461+00:00 Trying preferred_length_baseline; all QC and spacing rules remain active.",
+      "2026-10-15T14:49:55.954430+00:00 Trying preferred_baseline_plus_longer_infill; all QC and spacing rules remain active.",
+      "2026-10-15T14:49:58.583953+00:00 Trying all_lengths_site_packing; all QC and spacing rules remain active.",
+      "2026-10-15T14:50:00.898743+00:00 Trying all_lengths_spatial_balance; all QC and spacing rules remain active.",
+      "2026-10-15T14:50:04.796561+00:00 Kept 41 primaries / 41 compatible exact sites using preferred_baseline_plus_longer_infill."
+    ],
+    "interpretation": "Selected-probe and strand-audit tables are present. Final JSON/HTML/report presence is recorded separately; export completion is not established by these tables."
+  },
+  "process_observation": {
+    "method": "Read-only ps snapshot (sandbox escalation approved)",
+    "studio": {
+      "pid": 81208,
+      "port": 8768,
+      "running": true
+    },
+    "other_run": {
+      "run_id": "20261015_111022_183c36",
+      "stage_process": "blastn",
+      "pid": 85366,
+      "running": true
+    },
+    "note": "No process was modified. The separate GR/DP3 run was actively using BLAST at inspection time. Process states are time-specific observations."
+  },
+  "small_file_hashes": {
+    "run_config.json": {
+      "size_bytes": 873046,
+      "sha256": "b3866e12fa7ec326aa48775a942b5a7d09f93cf8ed2b1e5a25f669b576da5b24"
+    },
+    "parameter_provenance.json": {
+      "size_bytes": 6267,
+      "sha256": "8d6f8fd523c8bc98065363a5396b61fb58cffd2c7a324324c3ea5b0df183e230"
+    },
+    "selected_primaries.csv": {
+      "size_bytes": 15928,
+      "sha256": "2d9988443d733b7a827f1a64c7d62eedcebf20dc8e44e7c23de960fd07cb8ea8"
+    },
+    "selected_binding_sites.csv": {
+      "size_bytes": 4702,
+      "sha256": "8c3f8c1d906c464ef1226eff302143b659c277f7e817e155a6ae05348a86d35b"
+    },
+    "strand_consistency.csv": {
+      "size_bytes": 152,
+      "sha256": "78fffed9ffcbb1652dc187b117f5630bb3c525ffbf79744075011be537649c52"
+    },
+    "strand_consistency.json": {
+      "size_bytes": 899,
+      "sha256": "c387706c79a37aac0c0e303de42a14845fec0d30d7ce40a6d94d4ec05aac7957"
+    },
+    "region_summary.csv": {
+      "size_bytes": 452,
+      "sha256": "48e7dc9f648822ebe6764cb70573e33205f2caa93010570d8ba8038c90eab480"
+    },
+    "candidate_decisions.csv": {
+      "size_bytes": 98183,
+      "sha256": "a4ba77de89ab7331b3a461cf03a7124859c82b44f9a68b541524aecba9f8e11a"
+    },
+    "selected_pair_interactions.csv": {
+      "size_bytes": 255507,
+      "sha256": "20bd88f135830f9c09c2c11517d0b67da1e3d3b6fd87e2b95f80c7ea002e613d"
+    },
+    "selection_search.csv": {
+      "size_bytes": 405,
+      "sha256": "69027a7033490ec8dabcb759b58d1ebf2905a4a5ee9d23185a1df82f2680e643"
+    },
+    "generation_counts.csv": {
+      "size_bytes": 517,
+      "sha256": "8ba59fc81c8454b7a912b51ef9baef9b51824c7671406032c71853c219225b2f"
+    },
+    "readout_assignments.csv": {
+      "size_bytes": 265,
+      "sha256": "269896772b85cad203b25c85794e28bc2736aae3b097edd91db7d5e36323a76a"
+    },
+    "imager_inventory.csv": {
+      "size_bytes": 663,
+      "sha256": "eb59c247c2995018b37d8eef620ec2413c18946369a0a4c09ad16fa4a6edbb90"
+    },
+    "transcription_model.csv": {
+      "size_bytes": 58,
+      "sha256": "b00cffc49e5e87375aaf1907bf8148d6e9c2ff2f07efe869a63337cd81f4bc47"
+    },
+    "../run.log": {
+      "size_bytes": 1895,
+      "sha256": "6b73df2e8399b60c4fe11e15b0cfe1614cd379075096b4a43c5ea5eb87f90c97"
+    }
+  },
+  "all_run_file_sizes": [
+    {
+      "name": "result/DRAFT_IDT_oPools.csv",
+      "size_bytes": 4037
+    },
+    {
+      "name": "result/candidate_decisions.csv",
+      "size_bytes": 98183
+    },
+    {
+      "name": "result/candidate_queries.fa",
+      "size_bytes": 36226
+    },
+    {
+      "name": "result/candidate_review_alignments.csv",
+      "size_bytes": 7278791458
+    },
+    {
+      "name": "result/generation_counts.csv",
+      "size_bytes": 517
+    },
+    {
+      "name": "result/human_blast.log",
+      "size_bytes": 0
+    },
+    {
+      "name": "result/human_candidates_blast.tsv",
+      "size_bytes": 8226121936
+    },
+    {
+      "name": "result/imager_inventory.csv",
+      "size_bytes": 663
+    },
+    {
+      "name": "result/parameter_provenance.json",
+      "size_bytes": 6267
+    },
+    {
+      "name": "result/readout_assignments.csv",
+      "size_bytes": 265
+    },
+    {
+      "name": "result/region_summary.csv",
+      "size_bytes": 452
+    },
+    {
+      "name": "result/rna_human_blast.log",
+      "size_bytes": 0
+    },
+    {
+      "name": "result/rna_human_candidates_blast.tsv",
+      "size_bytes": 793214546
+    },
+    {
+      "name": "result/run_config.json",
+      "size_bytes": 873046
+    },
+    {
+      "name": "result/selected_binding_sites.csv",
+      "size_bytes": 4702
+    },
+    {
+      "name": "result/selected_pair_interactions.csv",
+      "size_bytes": 255507
+    },
+    {
+      "name": "result/selected_primaries.csv",
+      "size_bytes": 15928
+    },
+    {
+      "name": "result/selection_search.csv",
+      "size_bytes": 405
+    },
+    {
+      "name": "result/strand_consistency.csv",
+      "size_bytes": 152
+    },
+    {
+      "name": "result/strand_consistency.json",
+      "size_bytes": 899
+    },
+    {
+      "name": "result/transcription_model.csv",
+      "size_bytes": 58
+    },
+    {
+      "name": "run.log",
+      "size_bytes": 1895
+    }
+  ],
+  "large_files_policy": "Only sizes were read for raw BLAST and candidate_review_alignments.csv; these multi-GB files were not hashed, copied or fully read.",
+  "original_source_policy_defaults": {
+    "profile": "oligominer1_2nM",
+    "mode": "full",
+    "arm_min": 36,
+    "arm_max": 90,
+    "length_mode": "adaptive",
+    "preferred_arm_max": 42,
+    "extension_shortlist_per_bin": 80,
+    "selection_goal": "maximize_sites",
+    "gc_min": 0.0,
+    "gc_max": 76.0,
+    "tm_min": 45.0,
+    "tm_max": 55.0,
+    "tm_strict": true,
+    "candidate_step": 1,
+    "variants_per_start": 2,
+    "shortlist_per_bin": 160,
+    "max_total_candidates": 5000,
+    "target_per_bin": 30,
+    "minimum_per_bin": 15,
+    "minimum_gap": 5,
+    "footprint": "extended",
+    "bound_strand": "unselected",
+    "avoid_gene_rna": false,
+    "rna_exact_min": 18,
+    "preset_id": "adaptive_45_55",
+    "homopolymer_max": 5,
+    "human_policy": "intended_only",
+    "repeat_policy": "within_bin",
+    "high_offtarget_tm": 42.0,
+    "moderate_offtarget_tm": 35.0,
+    "max_high_offtarget_sites": 0,
+    "max_moderate_offtarget_sites": 10,
+    "reject_unknown_long": true,
+    "screen_rna": true,
+    "max_strong_rna_sites": 0,
+    "minimum_arm_unpaired": 0.4,
+    "minimum_cofold_gain": -12.0,
+    "maximum_pair_stem": 11,
+    "folding_temperature": 42.0,
+    "sodium_M": 0.39,
+    "allow_unresolved_bins": false,
+    "threads": 4
+  },
+  "source_default_comparison": {
+    "mode": {
+      "saved_errfi1": "full",
+      "source_v1_5_default": "full",
+      "equal": true
+    },
+    "selection_goal": {
+      "saved_errfi1": "maximize_sites",
+      "source_v1_5_default": "maximize_sites",
+      "equal": true
+    },
+    "target_per_bin": {
+      "saved_errfi1": 100,
+      "source_v1_5_default": 30,
+      "equal": false
+    },
+    "minimum_per_bin": {
+      "saved_errfi1": 50,
+      "source_v1_5_default": 15,
+      "equal": false
+    },
+    "threads": {
+      "saved_errfi1": 4,
+      "source_v1_5_default": 4,
+      "equal": true
+    },
+    "profile": {
+      "saved_errfi1": "oligominer1_2nM",
+      "source_v1_5_default": "oligominer1_2nM",
+      "equal": true
+    },
+    "tm_min": {
+      "saved_errfi1": 45,
+      "source_v1_5_default": 45.0,
+      "equal": true
+    },
+    "tm_max": {
+      "saved_errfi1": 55,
+      "source_v1_5_default": 55.0,
+      "equal": true
+    },
+    "tm_strict": {
+      "saved_errfi1": true,
+      "source_v1_5_default": true,
+      "equal": true
+    },
+    "gc_min": {
+      "saved_errfi1": 0,
+      "source_v1_5_default": 0.0,
+      "equal": true
+    },
+    "gc_max": {
+      "saved_errfi1": 76,
+      "source_v1_5_default": 76.0,
+      "equal": true
+    },
+    "length_mode": {
+      "saved_errfi1": "adaptive",
+      "source_v1_5_default": "adaptive",
+      "equal": true
+    },
+    "arm_min": {
+      "saved_errfi1": 36,
+      "source_v1_5_default": 36,
+      "equal": true
+    },
+    "preferred_arm_max": {
+      "saved_errfi1": 42,
+      "source_v1_5_default": 42,
+      "equal": true
+    },
+    "arm_max": {
+      "saved_errfi1": 90,
+      "source_v1_5_default": 90,
+      "equal": true
+    },
+    "bound_strand": {
+      "saved_errfi1": "+",
+      "source_v1_5_default": "unselected",
+      "equal": false
+    },
+    "homopolymer_max": {
+      "saved_errfi1": 5,
+      "source_v1_5_default": 5,
+      "equal": true
+    },
+    "candidate_step": {
+      "saved_errfi1": 1,
+      "source_v1_5_default": 1,
+      "equal": true
+    },
+    "variants_per_start": {
+      "saved_errfi1": 2,
+      "source_v1_5_default": 2,
+      "equal": true
+    },
+    "shortlist_per_bin": {
+      "saved_errfi1": 160,
+      "source_v1_5_default": 160,
+      "equal": true
+    },
+    "extension_shortlist_per_bin": {
+      "saved_errfi1": 80,
+      "source_v1_5_default": 80,
+      "equal": true
+    },
+    "max_total_candidates": {
+      "saved_errfi1": 5000,
+      "source_v1_5_default": 5000,
+      "equal": true
+    },
+    "minimum_gap": {
+      "saved_errfi1": 5,
+      "source_v1_5_default": 5,
+      "equal": true
+    },
+    "footprint": {
+      "saved_errfi1": "extended",
+      "source_v1_5_default": "extended",
+      "equal": true
+    },
+    "repeat_policy": {
+      "saved_errfi1": "within_bin",
+      "source_v1_5_default": "within_bin",
+      "equal": true
+    },
+    "high_offtarget_tm": {
+      "saved_errfi1": 42,
+      "source_v1_5_default": 42.0,
+      "equal": true
+    },
+    "max_high_offtarget_sites": {
+      "saved_errfi1": 0,
+      "source_v1_5_default": 0,
+      "equal": true
+    },
+    "moderate_offtarget_tm": {
+      "saved_errfi1": 35,
+      "source_v1_5_default": 35.0,
+      "equal": true
+    },
+    "max_moderate_offtarget_sites": {
+      "saved_errfi1": 10,
+      "source_v1_5_default": 10,
+      "equal": true
+    },
+    "reject_unknown_long": {
+      "saved_errfi1": true,
+      "source_v1_5_default": true,
+      "equal": true
+    },
+    "screen_rna": {
+      "saved_errfi1": true,
+      "source_v1_5_default": true,
+      "equal": true
+    },
+    "rna_exact_min": {
+      "saved_errfi1": 18,
+      "source_v1_5_default": 18,
+      "equal": true
+    },
+    "max_strong_rna_sites": {
+      "saved_errfi1": 0,
+      "source_v1_5_default": 0,
+      "equal": true
+    },
+    "minimum_arm_unpaired": {
+      "saved_errfi1": 0.4,
+      "source_v1_5_default": 0.4,
+      "equal": true
+    },
+    "minimum_cofold_gain": {
+      "saved_errfi1": -12,
+      "source_v1_5_default": -12.0,
+      "equal": true
+    },
+    "maximum_pair_stem": {
+      "saved_errfi1": 11,
+      "source_v1_5_default": 11,
+      "equal": true
+    },
+    "folding_temperature": {
+      "saved_errfi1": 42,
+      "source_v1_5_default": 42.0,
+      "equal": true
+    },
+    "sodium_M": {
+      "saved_errfi1": 0.39,
+      "source_v1_5_default": 0.39,
+      "equal": true
+    },
+    "avoid_gene_rna": {
+      "saved_errfi1": false,
+      "source_v1_5_default": false,
+      "equal": true
+    },
+    "preset_id": {
+      "saved_errfi1": "adaptive_45_55",
+      "source_v1_5_default": "adaptive_45_55",
+      "equal": true
+    },
+    "human_policy": {
+      "saved_errfi1": "intended_only",
+      "source_v1_5_default": "intended_only",
+      "equal": true
+    },
+    "allow_unresolved_bins": {
+      "saved_errfi1": false,
+      "source_v1_5_default": false,
+      "equal": true
+    }
+  },
+  "source_default_differences": {
+    "target_per_bin": {
+      "saved_errfi1": 100,
+      "source_v1_5_default": 30,
+      "equal": false
+    },
+    "minimum_per_bin": {
+      "saved_errfi1": 50,
+      "source_v1_5_default": 15,
+      "equal": false
+    },
+    "bound_strand": {
+      "saved_errfi1": "+",
+      "source_v1_5_default": "unselected",
+      "equal": false
+    }
+  },
+  "source_hashes": {
+    "design_engine.py": "845c461f9e81f3e0dee2249a2a21bcf54bb2ae90ed9d9d34904e50ecf6b864e4",
+    "design_presets.py": "d968baec5b5e1e09f5ce7bee3df48bb3b834e08929ab72b569fbfeac3a610f72",
+    "studio.py": "ea32a65d7894ffaceae7df0bacced974fedaa43c67deaa9d736a23860d70db06",
+    "web/app.js": "76508151f5a64502afcc5e91eacbbfcff30cf4eda411485f15efa7f8243271e5",
+    "web/index.html": "5433ca1c5f8cb2b370b39cdfd66952a0e4fdd4e2484fed257893f14634f9fbcc"
+  },
+  "live_vs_download_source_matches": {
+    "design_engine.py": true,
+    "design_presets.py": true,
+    "studio.py": true,
+    "web/app.js": true,
+    "web/index.html": true
+  },
+  "settings_cross_checks": {
+    "RASERFISH_design_settings (1).json": {
+      "sha256": "3e09ff3dffa5fb4cf435324d40bcb8fa5de97a71202ac286be273c860f0866d5",
+      "policy_matches_run": true,
+      "policy_differences": {},
+      "bounds": {
+        "chr1_7820001_8220000": [
+          189019,
+          209018
+        ]
+      }
+    },
+    "RASERFISH_design_settings (2).json": {
+      "sha256": "3e09ff3dffa5fb4cf435324d40bcb8fa5de97a71202ac286be273c860f0866d5",
+      "policy_matches_run": true,
+      "policy_differences": {},
+      "bounds": {
+        "chr1_7820001_8220000": [
+          189019,
+          209018
+        ]
+      }
+    },
+    "RASERFISH_design_settings (3).json": {
+      "sha256": "d7ccc86faca207726c3ab97f65a8ec918c2d57a0acbb2d509f03b6a096b8a494",
+      "policy_matches_run": true,
+      "policy_differences": {},
+      "bounds": {
+        "chr1_7820001_8220000": [
+          366425,
+          386424
+        ]
+      }
+    },
+    "RASERFISH_design_settings.json": {
+      "sha256": "a350850f1826bc9ab7fe609cb8e9ba70d7e21bb6aee7c27ee0d9e5cb6964c9c3",
+      "policy_matches_run": false,
+      "policy_differences": {
+        "high_offtarget_tm": {
+          "saved_setting": 35,
+          "run_value": 42
+        }
+      },
+      "bounds": {
+        "chr1_7820001_8220000": [
+          189019,
+          209018
+        ]
+      }
+    }
+  },
+  "runtime_observation": {
+    "python_path": "<local-path-omitted>",
+    "python_version": "3.11.17",
+    "available_modules": {
+      "Bio": "1.86",
+      "RNA": "2.7.2",
+      "numpy": "2.4.6"
+    },
+    "unavailable_optional_modules": [
+      "pytest",
+      "scipy",
+      "flask"
+    ],
+    "available_binaries": [
+      "<local-path-omitted>",
+      "<local-path-omitted>"
+    ],
+    "absent_cli_binaries": [
+      "RNAfold",
+      "RNAcofold"
+    ],
+    "note": "Python RNA module is available; missing standalone ViennaRNA CLI tools do not imply missing Python folding support."
+  }
+}

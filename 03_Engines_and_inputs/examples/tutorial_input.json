@@ -1,0 +1,160 @@
+{
+  "title": "Synthetic tutorial: fixed TOP strand, transcript-only policy / LOCAL QC ONLY",
+  "references": [
+    {
+      "id": "SYNTHETIC_TUTORIAL",
+      "description": "Synthetic tutorial for adaptive lengths; not a real genomic locus or a proposed order",
+      "sequence": "ATACAAGAATATGTTATGCTAGTATCACAGATAAATACCTACCGATCTAAGGCGCATATGGCAATAGTGTAAATAAACAAAAGTACTTGTTTACATTACGGCTGAAACCTCATTCATTAATAGATAAGTTAATTATAAAGATCAGTCTACTTAAAGATAGTGCTATCCTATTTCGGTAATATAGTGATCTCTCAATGATTCTGACTAGTAAAAAGAATTCGTAAATAATTATATTTAGTTATTAGACGCGAACAACCTGGACGATTATGATACTATATGATATAAAAGTCTTTCTACCCATATCTAATCTTGTAAGGAAAGCTGGCGTAGAACTATACCGTGTTTGTAAATTGCAAAAAGAGGCGCATATCAAACAATTTAAAGTAAGTAACGATGTATTCTTAATAATAAGATAACGTGATTGATTAAATTAACTAACGAGCTGCATACCTTTCATAAAAGGTATTTAAAAAATCTGCTGAAATACGTTAATGTCAAATTCGATAATTTGTTTCCAAATATGGATTTCGTATTCTCCGATAGTTAGAGATTATGTCGTACTTCACTGGTCAATTACTAGATCAATACGTAATACCCAGTTATTGGACAATAGTAAGTATATTTATAAAGTTGTATTAAGATTTTCAATGCAGAAGCGCCATATAATGCTCTGTTCTAAAATCTAGCAGCTGGCATTAGAAAAGTTTCATTACGCGGATCTCTGATAAGACAGACCTGTCAAGTAACATATACATTCAAATTAGTATTTTGATCACTGTTGTTGAGTATACGATATATTCTCCAGGTTTTCTAAAATTATTAAAAATTAAGGTATAATAAAAGATTATTGATCTCGTAAGTCACACGGTAAGTACAATCAAAGTACTTTGTTATCTCTTAATGAACTTCAGAAAAACAGATGTGTCTCAATTTAAACGTAATATGGAGGTATTTTGTATAGGCACGGTGTTTATAAGATACGTATCAAGCATATCTTTGACCGTTGGTTCTTCAGGAACTCCACACCTCTCTCAGAAGGTTGGAGCCCTCTGTGCGGCGCCCCTCAGAGGGCACGTGAACCCTGGCGCCGCGGCAAACAGGAACACCGGCGATGGCCCCTCAAGGTCCTAGATGGGCGCTAATGCCGCTTTGTTATTCCCTGCCGCGGGCCTTTGCAAGACTGACTCGAATGCAGCGAATGGGCCTTCGCCATACTGAAAGGGGACCTGGCGACCGGCCGACGCTGAAATAGGGACCGTATACCCAAAGATTCCGGTAGCTGCTAGACGCGCCTTAATTCGCGCGCCAAGGACATTCTACGCGAAGCGTGGGCGGCTCGCGGGTGCAGCGTCCGACTGTATCTCGGGCTGTTGCTTTCAGCAGTACGTCGCCTTGCGATTTGCGTGGAACGGTGGTTAGGATTCTCCTTAGTTATACCTTTCACCCATAAATAATTTCGAGTCAAACCCATGGCGATATCCAGCACTTTCAGACGCAGCCCCGAGCTGGCTCTAACTTGGACGTTGCGGTGCTCGGTTGGTCCTAGCCACCTTGCACCTGTACGAAATGGCTGCCATAACTCGAGCACGGCGCGGACATCCGCCGTCGCCACTTGAGGGCGAGATGGGAGTTTGTTCGCAGAAGAGGTGGCACACTGGTCTGTCCTCAGAGTGCGTAAACTTATTGACGGTAGCCGTCGACTTTAACGGCGGTACGCTGAGGGGGTGCCGTGTCTCTGTGCCGCGCTGGTGGTCGTTGAACCTCGTCGCTGGCCCTGCCGAGTATTGGAGCAAGGTGCAGATGGTGTACGCGTTGCCGTGGATCGGTATGCCCGTCCCTAGAACTCGGCTACAATGATTTTCCCTGGTATGGGTTGTACTCAATTGCGCCCAACCATCCTCGCGGTGTCGGCGACACCCAGATCTGGTCGTTCGAACCTATGTGGGTCTGGGCGGAAAGTCCACCTGGCCATGTTAACACCTCGGCTATTAGTGGCGTAGAAAGGTGGGTGAGGTCTAAGGTGGACCACTATAGAATATCTGGTTCCTCTACCCAAATCGTTCGCCTGACCTTCCTTTACGGATTGGCATAGTTCGCTATTCCCTCACTTCTAGTCGTCGGGTTAGAAATTGAAAGCCGATTAAGCGGGACAACGTTCTCGGTGATTGCAGGCCGTTCTTTCCTACGGCTAGCAAATAAGGGTGCACGTAAAAGCTGACTGCTCCCTGCCCAATTCGGTTATGCCCTCTTCACGGGATTCACCCTGCAAGCTGTCTGTTCTCTTCCTATAGACGCCTGCGTCCTAGAAAGCACTCCCTCCGTGAGCTTGCCTAACCGGGCTGACGCAAGCTGTATAGGAGGGGATACTCGTCTGCGAGTCATTAAGCAATAGTGCCAATACATACCGCAACCGTGTTCTCTCTAGCTCAGTATAGCATTAATGATATGATTCGGAACGGTTCTTAGTATGTCCAATTCTGGTGCTCGACAACGAGAATGATCCGCACAATTGAAAGGTCTCAGGGCCACTCGGGCCGGTCATTAACGGGATGCGGGACCAAAGCATAGAACTCTTTCAAGTTACATAGCGGTTAGACTGTTCGTCACGCGGTCTTGTGGGCACAACGGGTTTACCCTTGTGTGCCAGCACGGTCGTGGTCCACGCGTGTCATAGACGCTTAATCAGCTAGGGGGGAAGATAAACCACCAGTTTTCCCCTTACAGAAATTTGTCCCATGACGAGTTCCCCGCTGCAAGTCACCATGTCTCTGCCGCTTTGACCGAATGCCCCAAAGATGCTCGTGTTAGATTTTCAGAATTTAAAAGTCCGCATTCGAAATCAGTCAAAGGTATGGCACAACAACATAAAGCGGGAGGTAACCGAGAGGATACAATCGGTGATAACGTTGCCCTCCGTTACCGAGCTCAAATCCCGGTCCCTGAATCTCTGCACCGAACAAGACGAGATATAACTCACGCAGCGGAGATCGATAGCTGCTA",
+      "length": 3000,
+      "mapping": null,
+      "features": [
+        {
+          "type": "gene",
+          "label": "DEMO_forward",
+          "start": 80,
+          "end": 890,
+          "strand": "+",
+          "feature_id": "DEMO_forward",
+          "source": "SYNTHETIC tutorial annotation, not a biological locus"
+        },
+        {
+          "type": "gene",
+          "label": "DEMO_reverse",
+          "start": 1080,
+          "end": 1850,
+          "strand": "-",
+          "feature_id": "DEMO_reverse",
+          "source": "SYNTHETIC tutorial annotation, not a biological locus"
+        },
+        {
+          "type": "gene",
+          "label": "DEMO_plus_overlap",
+          "start": 2070,
+          "end": 2490,
+          "strand": "+",
+          "feature_id": "DEMO_plus_overlap",
+          "source": "SYNTHETIC tutorial annotation, not a biological locus"
+        },
+        {
+          "type": "gene",
+          "label": "DEMO_minus_overlap",
+          "start": 2290,
+          "end": 2710,
+          "strand": "-",
+          "feature_id": "DEMO_minus_overlap",
+          "source": "SYNTHETIC tutorial annotation, not a biological locus"
+        }
+      ],
+      "sha256": "3db5daa1d3525604e359f312a008bd23fadfe2606dab3a11cd709fd312c6a57e"
+    }
+  ],
+  "imagers": [
+    {
+      "id": "DP7",
+      "sequence": "CCGATACGAATA",
+      "docking": "TATTCGTATCGG",
+      "dye": "Atto565N",
+      "source": "User imager inventory"
+    },
+    {
+      "id": "DP3",
+      "sequence": "TTAATATCGCGG",
+      "docking": "CCGCGATATTAA",
+      "dye": "atto647NN (as recorded)",
+      "source": "User imager inventory"
+    },
+    {
+      "id": "DP1",
+      "sequence": "CTAACGAATCGG",
+      "docking": "CCGATTCGTTAG",
+      "dye": "atto565N",
+      "source": "User imager inventory"
+    },
+    {
+      "id": "DP11",
+      "sequence": "TATCGTCGTTAG",
+      "docking": "CTAACGACGATA",
+      "dye": "atto647NN (as recorded)",
+      "source": "User imager inventory"
+    },
+    {
+      "id": "DP2",
+      "sequence": "TGTATCGTAACGG",
+      "docking": "CCGTTACGATACA",
+      "dye": "atto565N",
+      "source": "User imager inventory"
+    },
+    {
+      "id": "DP5",
+      "sequence": "TGTTATCGACGAT",
+      "docking": "ATCGTCGATAACA",
+      "dye": "atto647NN (as recorded)",
+      "source": "User imager inventory"
+    }
+  ],
+  "bin_width": 1000,
+  "tail_policy": "strict",
+  "assignments": {
+    "SYNTHETIC_TUTORIAL_B001": "DP7",
+    "SYNTHETIC_TUTORIAL_B002": "DP3",
+    "SYNTHETIC_TUTORIAL_B003": "DP1"
+  },
+  "transcription": {
+    "SYNTHETIC_TUTORIAL": {
+      "mode": "annotations",
+      "confirmed": true
+    }
+  },
+  "transcripts": [
+    {
+      "id": "SYNTHETIC_offtarget_RNA",
+      "sequence": "CCCGAGTAGCTCATCGGCGACGATCCCCCTGCGTGAGGGTAGGTGCACTGGTTGCGTCGTCGACCCGGGGGCTGAGTCCCCTCGGCCACCTCCCCACACCTCGGGGCCGACTCCGGAATT",
+      "description": "Deliberate tutorial RNA-complementarity control",
+      "length": 120
+    }
+  ],
+  "policy": {
+    "profile": "oligominer1_2nM",
+    "mode": "local_preview",
+    "arm_min": 36,
+    "arm_max": 90,
+    "length_mode": "adaptive",
+    "preferred_arm_max": 42,
+    "extension_shortlist_per_bin": 80,
+    "selection_goal": "maximize_sites",
+    "gc_min": 0.0,
+    "gc_max": 76.0,
+    "tm_min": 45.0,
+    "tm_max": 55.0,
+    "tm_strict": true,
+    "candidate_step": 1,
+    "variants_per_start": 2,
+    "shortlist_per_bin": 80,
+    "max_total_candidates": 5000,
+    "target_per_bin": 14,
+    "minimum_per_bin": 5,
+    "minimum_gap": 5,
+    "footprint": "extended",
+    "bound_strand": "+",
+    "avoid_gene_rna": false,
+    "rna_exact_min": 18,
+    "preset_id": "adaptive_45_55",
+    "homopolymer_max": 5,
+    "human_policy": "intended_only",
+    "repeat_policy": "within_bin",
+    "high_offtarget_tm": 42.0,
+    "moderate_offtarget_tm": 35.0,
+    "max_high_offtarget_sites": 0,
+    "max_moderate_offtarget_sites": 10,
+    "reject_unknown_long": true,
+    "screen_rna": true,
+    "max_strong_rna_sites": 0,
+    "minimum_arm_unpaired": 0.4,
+    "minimum_cofold_gain": -12.0,
+    "maximum_pair_stem": 11,
+    "folding_temperature": 42.0,
+    "sodium_M": 0.39,
+    "allow_unresolved_bins": false,
+    "threads": 4
+  }
+}

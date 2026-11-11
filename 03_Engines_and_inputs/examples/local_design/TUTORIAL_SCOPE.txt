@@ -1,0 +1,1 @@
+SYNTHETIC TUTORIAL ONLY. Not ERRFI1 or CFTR. Local sequence checks and exact-stem checks only. Public RNA/genome BLAST and full folding NOT RUN. Fixed TOP (+) strand; transcript-only policy. Do not order the tutorial sequences.

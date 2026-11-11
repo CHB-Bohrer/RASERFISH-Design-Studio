@@ -1,0 +1,215 @@
+{
+  "schema": "raserfish.errfi1-cheap-generation-validation.v1",
+  "started_at_utc": "2026-10-15T15:46:29.134560+00:00",
+  "scope": "Actual bundled ERRFI1 reference; candidate generation and local exact-site/spacing filters only. No BLAST, transcript-sequence specificity, monomer folding, pair folding, or final probe selection was run. Shortlisted candidates are not full-QC-passing probes.",
+  "policy": {
+    "profile": "oligominer1_2nM",
+    "mode": "full",
+    "arm_min": 36,
+    "arm_max": 90,
+    "length_mode": "adaptive",
+    "preferred_arm_max": 42,
+    "extension_shortlist_per_bin": 200,
+    "selection_goal": "maximize_sites",
+    "gc_min": 0.0,
+    "gc_max": 76.0,
+    "tm_min": 45.0,
+    "tm_max": 55.0,
+    "tm_strict": true,
+    "candidate_step": 1,
+    "variants_per_start": 2,
+    "shortlist_per_bin": 400,
+    "max_total_candidates": 5000,
+    "target_per_bin": 100,
+    "minimum_per_bin": 50,
+    "minimum_gap": 5,
+    "footprint": "extended",
+    "bound_strand": "+",
+    "avoid_gene_rna": false,
+    "rna_exact_min": 18,
+    "preset_id": "errfi1",
+    "homopolymer_max": 5,
+    "human_policy": "intended_only",
+    "repeat_policy": "within_bin",
+    "high_offtarget_tm": 42.0,
+    "moderate_offtarget_tm": 35.0,
+    "max_high_offtarget_sites": 0,
+    "max_moderate_offtarget_sites": 10,
+    "reject_unknown_long": true,
+    "screen_rna": true,
+    "max_strong_rna_sites": 0,
+    "minimum_arm_unpaired": 0.4,
+    "minimum_cofold_gain": -12.0,
+    "maximum_pair_stem": 11,
+    "folding_temperature": 42.0,
+    "sodium_M": 0.39,
+    "allow_unresolved_bins": false,
+    "threads": 4
+  },
+  "prior_saved_generation_counts": [
+    {
+      "GC_outside": 29339,
+      "Tm_outside": 421567,
+      "bin_id": "chr1_7820001_8220000_B001",
+      "composition_Tm_pass": 475591,
+      "cross_bin_or_other_reference_exact": 65,
+      "extension_locally_compatible": 30089,
+      "extension_shortlisted_for_QC": 80,
+      "extension_windows_enumerated": 956856,
+      "length_alternatives_not_retained": 436437,
+      "not_shortlisted": 38914,
+      "preferred_locally_compatible": 9065,
+      "preferred_shortlisted_for_QC": 160,
+      "preferred_windows_enumerated": 139734,
+      "shortlisted_for_QC": 240,
+      "simple_repeat": 170093,
+      "unique_locally_compatible_candidates": 39154,
+      "windows_enumerated": 1096590
+    }
+  ],
+  "prior_generation_csv_sha256": "8ba59fc81c8454b7a912b51ef9baef9b51824c7671406032c71853c219225b2f",
+  "full_qc_performed": false,
+  "new_selected_probe_count": null,
+  "reference_hashes_before": {
+    "chr1_7820001_8220000": "37f890a441aeec7ff50953ec4683562ebd3e7f4fb744d61e73005691a420e836"
+  },
+  "status": "PASS",
+  "elapsed_seconds": 85.467,
+  "new_generation_counts": [
+    {
+      "bin_id": "chr1_7820001_8220000_B001",
+      "windows_enumerated": 1096590,
+      "preferred_windows_enumerated": 139734,
+      "composition_Tm_pass": 475591,
+      "extension_windows_enumerated": 956856,
+      "Tm_outside": 421567,
+      "simple_repeat": 170093,
+      "length_alternatives_not_retained": 436437,
+      "cross_bin_or_other_reference_exact": 65,
+      "GC_outside": 29339,
+      "unique_locally_compatible_candidates": 39154,
+      "preferred_shortlisted_for_QC": 400,
+      "extension_shortlisted_for_QC": 200,
+      "preferred_locally_compatible": 9065,
+      "extension_locally_compatible": 30089,
+      "shortlisted_for_QC": 600,
+      "not_shortlisted": 38554
+    }
+  ],
+  "shortlisted_candidate_count": 600,
+  "length_band_counts": {
+    "preferred": 400,
+    "extended": 200
+  },
+  "bound_strand_counts": {
+    "+": 600
+  },
+  "arm_length_range_nt": [
+    36,
+    90
+  ],
+  "tm_range_C": [
+    45.010000000000005,
+    54.980000000000004
+  ],
+  "gc_range_percent": [
+    27.77777777777778,
+    75.67567567567568
+  ],
+  "all_strict_tm_inside": true,
+  "all_exact_sites_fixed_strand": true,
+  "unique_candidate_ids": 600,
+  "candidate_ids_sha256": "0d5f88d51079113c6e352fc95027c1706f528d77242ecf0ffc9eb8547b30de01",
+  "per_region": [
+    {
+      "region": "chr1_7820001_8220000_B001",
+      "start": 189019,
+      "end": 209018,
+      "imager": "DP1",
+      "sector_width_bp": 1000,
+      "sector_count": 20,
+      "sector_shortlist_counts": [
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30
+      ],
+      "band_sector_counts": {
+        "preferred": [
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "extended": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "sector_assignment": "Candidate leftmost exact start, matching _spatial_shortlist sector assignment."
+    }
+  ],
+  "generation_filter_comparison": [
+    {
+      "region": "chr1_7820001_8220000_B001",
+      "differences_before_shortlisting": {},
+      "old_shortlisted": 240,
+      "new_shortlisted": 600
+    }
+  ],
+  "reference_hashes_after": {
+    "chr1_7820001_8220000": "37f890a441aeec7ff50953ec4683562ebd3e7f4fb744d61e73005691a420e836"
+  },
+  "reference_sequences_unchanged": true,
+  "finished_at_utc": "2026-10-15T15:47:54.611353+00:00"
+}
