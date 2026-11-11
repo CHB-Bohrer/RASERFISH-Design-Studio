@@ -1,0 +1,710 @@
+{
+  "schema": "raserfish.source-package.v1",
+  "version": "1.6.1",
+  "snapshot_date": "2026-11-11",
+  "source_directory_name": "RASERFISH_Design_Studio_v1_6",
+  "note": "Hashes cover all packaged files except this manifest itself; ZIP checksums are supplied separately.",
+  "files": {
+    ".gitignore": {
+      "origin": "generated for source packaging",
+      "bytes": 637,
+      "sha256": "124fc4c6af72fb149abaa8c2078182b7e2bbd8dcc8e4de6c58bd2f1543151987"
+    },
+    "ADAPTIVE_LENGTH_CHANGES.md": {
+      "origin": "installed source",
+      "source_sha256": "a42bf7ab79b3c46af2df70704af6bb858450ca53ff3be55e12d1740ac5021f93",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 5448,
+      "sha256": "c63bc579f4e4dcff7d4355cde9eff636d902bcab6ddde1a4db1187fd75b97dbe"
+    },
+    "AUTOMATIC_RECOVERY_2026-10-16.txt": {
+      "origin": "installed source",
+      "source_sha256": "0d82fcb1ccbd43b6c19656989caa385d330bbe7b6993cc093e96efde86732015",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 4773,
+      "sha256": "4bde26a03a6950c034d0a61d4cff9ceeb5025df82334e7dd500ffdffa5a85433"
+    },
+    "BINDING_DIAGRAM_CHANGES.md": {
+      "origin": "installed source",
+      "source_sha256": "9acf68fc2d0682070d55427440aeeaa970e74c7b2f04b0cb7c876c21fd62322f",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 4842,
+      "sha256": "897a621c97ba7e4f74a730000139a0b31b169e8622e01ab76e50cf691cd40a1f"
+    },
+    "CHANGELOG.md": {
+      "origin": "installed source",
+      "source_sha256": "0512aefd0d8dd3a1f0fce1962d093d97f7ee01380a7aebae571367b52cca07b0",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 5683,
+      "sha256": "8df7b0382c43e419b594b812c4378f0c204d495d66e3aadc469cb9d784548c11"
+    },
+    "CHECKPOINTS_2026-10-16.txt": {
+      "origin": "installed source",
+      "source_sha256": "888b1c6322b0b355333c4dd3d6d0cca8ca7ea9252c7adb24cdcaef87f3a3e5d6",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 4641,
+      "sha256": "810cbd3c86bc12ce1cb1675a141e9c6f1eb13cf11845deff878d3023637a0352"
+    },
+    "COVERAGE_UI_2026-10-26.txt": {
+      "origin": "installed source",
+      "source_sha256": "eb53daaff07b9250fc2048eb37d0732276b0197d0b0cb3735c3d9dba2ae80f68",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 2014,
+      "sha256": "16b3c45fbad38f7e2ab6509cfe659568906143b5c08dba3d2afd1c30cee426e1"
+    },
+    "IMAGER_INPUT_CHANGES.md": {
+      "origin": "installed source",
+      "source_sha256": "1d3e026f4906c3e4131a884034404a28463a83a1fba03e02b1f621d6e7b1f15d",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 5178,
+      "sha256": "7184d2cebd9733241037385336bb02dcf785a368325d8b4e2160ab33a67a0aa3"
+    },
+    "Install.command": {
+      "origin": "installed source",
+      "source_sha256": "a347ad76938660bb88409436ead87a8531cfce17954866e7892c97c646431028",
+      "bytes": 300,
+      "sha256": "a347ad76938660bb88409436ead87a8531cfce17954866e7892c97c646431028"
+    },
+    "MEMORY_MONITOR_REPAIR_2026-10-16.txt": {
+      "origin": "installed source",
+      "source_sha256": "a597a7f3e5b003e218cf9b4ad96464df4c36be10340db0685b3b12c9887cc034",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 2749,
+      "sha256": "3ed95cc4f7512684c3cbb97c75ee55881a0422c5b6cbe7589b0a755b3515cccc"
+    },
+    "METHODS_AND_LIMITATIONS.md": {
+      "origin": "installed source",
+      "source_sha256": "8942ede325194da86e44dbf21c78ae22a396668646fbbbc1758806b6be24fa2e",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 16826,
+      "sha256": "34739ac6e760c7b1e772b82409cbbd8095630c016cdb463ba235e18706677f81"
+    },
+    "Open_Studio.command": {
+      "origin": "installed source",
+      "source_sha256": "0edde54173b83edcb5711c8e1fd71d4c92ab975a790372fa1addcf719d0ead9a",
+      "bytes": 305,
+      "sha256": "0edde54173b83edcb5711c8e1fd71d4c92ab975a790372fa1addcf719d0ead9a"
+    },
+    "PACKAGE_NOTES.md": {
+      "origin": "generated for source packaging",
+      "bytes": 2405,
+      "sha256": "2d69a8aae3763304ee311f1e1d09933f691315e67208751e8ef58014b7ea59be"
+    },
+    "PACKAGE_VALIDATION.txt": {
+      "origin": "generated for source packaging",
+      "bytes": 2370,
+      "sha256": "9cc580c7a658b29b9041d106763662a470350625315070b042e554a6e817d911"
+    },
+    "PERFORMANCE_UPDATE_20261102.txt": {
+      "origin": "installed source",
+      "source_sha256": "f27ef5b25c15272e62d0f20aaf9924bda8caa1a9ae8829b710042bf8ba527cab",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 3595,
+      "sha256": "c213c522eeda0eafb34ded4d5860f0d63b135a5273b18746f520f07bf31ffcd2"
+    },
+    "PERFORMANCE_UPDATE_20261103.txt": {
+      "origin": "installed source",
+      "source_sha256": "3ab13ea8422233e900aa19af5d7a6daed18db68025dd96bd69a780939e1ec57c",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 4761,
+      "sha256": "830c10a62e27e443d65c952092968ef0ea3c189bd50b43ed59eefeb3dc8aee24"
+    },
+    "PRESET_AND_RNA_CHANGES.md": {
+      "origin": "installed source",
+      "source_sha256": "2da0e2de30d6bab7c6992a595ea949b9ae1efd73718b39372bacb7829ee1d937",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 6545,
+      "sha256": "d4b2ab1cee1b1b19eaa11198619c47f5c1057061bab080fea52a7c52c3c61253"
+    },
+    "README.md": {
+      "origin": "generated for source packaging",
+      "bytes": 5242,
+      "sha256": "9a0ed217b2b1cc86b54fe6c25f07016dd903b3e4c72847eff97ca545b78b5b6a"
+    },
+    "RELEASE_NOTES.md": {
+      "origin": "installed source",
+      "source_sha256": "87ec5993f19533152170285cc4e597fedd39256f274375da97c956f103093092",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 9160,
+      "sha256": "5beafdd4c86107b95cf5b2299273b24b250eca1591173470ef5730b699ede0fd"
+    },
+    "RELEASE_NOTES_1_6_1.md": {
+      "origin": "installed source",
+      "source_sha256": "8ba61a989efc789568c5f845f35dd7d9d54e4a43f7c380874e1ddfcffc81578f",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 7095,
+      "sha256": "0c77c9acdf2087275f3cda246f43ead1251c31deb21e1a45f2e1ca77e6e3935e"
+    },
+    "REPAIR_REPORT_2026-10-16.txt": {
+      "origin": "installed source",
+      "source_sha256": "c8d47a2d58147a5f92087a8594f008ee39700383d03c862965cf0132630caeeb",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 7260,
+      "sha256": "e3626a7f532b8273790adb2dd5f980682e57374c968bddc4f70d0bfe1dee645d"
+    },
+    "SERVER_RECOVERY_2026-10-16.txt": {
+      "origin": "installed source",
+      "source_sha256": "5fa7b4835f5ccb1e36c607ce185f11591a415442caa576309be9309d5afc1bdb",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 3977,
+      "sha256": "f3806ba4e928f6814e4043737cbedb3744bf15dba99a86d55d7e29100ec3eac8"
+    },
+    "SINGLE_STRAND_README.txt": {
+      "origin": "installed source",
+      "source_sha256": "4877ff9b41fb85dd67009b0010599a331ec861f9c8c15c6e47ac417aaae13f9e",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 1695,
+      "sha256": "9c255b451de50745108047a852dc87592e77fe7ae89e623ef2a50d1553677519"
+    },
+    "SOURCES.md": {
+      "origin": "installed source",
+      "source_sha256": "44aa46ae817f7fa7e6b8a7b7aabe6157712f1ed66df6360f4ca4dbbe0d29f7b8",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 3527,
+      "sha256": "04c07a757a0ef53fb71c1e9c7f765a978ae464d1b4e07d602023f80058c3ee15"
+    },
+    "START_HERE.txt": {
+      "origin": "generated for source packaging",
+      "bytes": 706,
+      "sha256": "5c8462d3734e3479c564002189dd9c3d68420ce90f2d36e41640f60af0391498"
+    },
+    "STORAGE_REPAIR_2026-10-18.txt": {
+      "origin": "installed source",
+      "source_sha256": "cb1add132a45400e5c6773a53440c1221e333dbec53a45bc382ce782fdf77d5e",
+      "packaging_edit": "Added historical-document notice and removed personal absolute paths where present.",
+      "bytes": 4324,
+      "sha256": "381c152590c9deac8f3f581f25bc1ad01399b34ba92e95340bc6beb1cb6a0bdc"
+    },
+    "VERSION.txt": {
+      "origin": "installed source",
+      "source_sha256": "6430a242e9486093ef6f71d9086d48f61ba102f0d2fb0f5b95334c6007a46db3",
+      "bytes": 6,
+      "sha256": "6430a242e9486093ef6f71d9086d48f61ba102f0d2fb0f5b95334c6007a46db3"
+    },
+    "annotation_sources.py": {
+      "origin": "installed source",
+      "source_sha256": "ca4e5b6fe577b5c04f11033237405df6d36d4ddf6eda842959655e1e9a03e637",
+      "bytes": 14077,
+      "sha256": "ca4e5b6fe577b5c04f11033237405df6d36d4ddf6eda842959655e1e9a03e637"
+    },
+    "automatic_recovery.py": {
+      "origin": "installed source",
+      "source_sha256": "196360cd5f639930a4914878e24b50c1a3c0062f48f243faa7f2657df297700b",
+      "bytes": 6487,
+      "sha256": "196360cd5f639930a4914878e24b50c1a3c0062f48f243faa7f2657df297700b"
+    },
+    "blast_stream.py": {
+      "origin": "installed source",
+      "source_sha256": "e2436f8088b87e8b86aed303209bdcfdc67bde034a5bb03f60ba62ab9132438f",
+      "bytes": 6865,
+      "sha256": "e2436f8088b87e8b86aed303209bdcfdc67bde034a5bb03f60ba62ab9132438f"
+    },
+    "compact_outputs.py": {
+      "origin": "installed source",
+      "source_sha256": "5568881f4e5629b8fc3ef2eb241f576bec13c6f82f934e73e14b68dea8601960",
+      "bytes": 26225,
+      "sha256": "5568881f4e5629b8fc3ef2eb241f576bec13c6f82f934e73e14b68dea8601960"
+    },
+    "coverage_report.py": {
+      "origin": "installed source",
+      "source_sha256": "90c4c45b89503548fcc5489f42fee615556164221fed8342ac1ffb2e3b50b087",
+      "bytes": 27249,
+      "sha256": "90c4c45b89503548fcc5489f42fee615556164221fed8342ac1ffb2e3b50b087"
+    },
+    "design_checkpoints.py": {
+      "origin": "installed source",
+      "source_sha256": "baf7bdbeb99e5cfa89323a4b084819743aecddcf0dcc48f93e1770cd47b35258",
+      "bytes": 16116,
+      "sha256": "baf7bdbeb99e5cfa89323a4b084819743aecddcf0dcc48f93e1770cd47b35258"
+    },
+    "design_engine.py": {
+      "origin": "installed source",
+      "source_sha256": "0a83e6ca8be34049034d528dade71085be817b2e8105aca554cb53a3db6aad38",
+      "bytes": 95897,
+      "sha256": "0a83e6ca8be34049034d528dade71085be817b2e8105aca554cb53a3db6aad38"
+    },
+    "design_presets.py": {
+      "origin": "installed source",
+      "source_sha256": "d01a080e7a6c603e11866881293236f31a7f4ea4dccaa3b379c4bd5286194a22",
+      "bytes": 9793,
+      "sha256": "d01a080e7a6c603e11866881293236f31a7f4ea4dccaa3b379c4bd5286194a22"
+    },
+    "engine/oligominer_thermo_qc.py": {
+      "origin": "installed source",
+      "source_sha256": "d3de6b820290ebbe2cdc0fc805c5eaf04b9b15d8344ab0ae67fe5518a506d7b8",
+      "bytes": 15903,
+      "sha256": "d3de6b820290ebbe2cdc0fc805c5eaf04b9b15d8344ab0ae67fe5518a506d7b8"
+    },
+    "engine/probe_binding_viewer.py": {
+      "origin": "installed source",
+      "source_sha256": "0b0a2b40b025797635cbc4c347fdfe405847194a2ada5409a8a7a4b345bd3e34",
+      "bytes": 61071,
+      "sha256": "0b0a2b40b025797635cbc4c347fdfe405847194a2ada5409a8a7a4b345bd3e34"
+    },
+    "engine/qc_core.py": {
+      "origin": "installed source",
+      "source_sha256": "f4a0b72e5bc66a54cd70dc13863f124c6c747f7752fb3b522359cd2470f703cf",
+      "bytes": 26286,
+      "sha256": "f4a0b72e5bc66a54cd70dc13863f124c6c747f7752fb3b522359cd2470f703cf"
+    },
+    "engine/qc_interface.py": {
+      "origin": "installed source",
+      "source_sha256": "a22f7cb93257be59e7651f0709afc312609238ede468257cb247a06321f2f76b",
+      "bytes": 25747,
+      "sha256": "a22f7cb93257be59e7651f0709afc312609238ede468257cb247a06321f2f76b"
+    },
+    "examples/README.md": {
+      "origin": "generated for source packaging",
+      "bytes": 520,
+      "sha256": "277a8295c5b0a21e5e7cf2e4673662730b3215c39a50024ba9be9d40700a6406"
+    },
+    "examples/compact_demo/design_result.json": {
+      "origin": "installed source",
+      "source_sha256": "87c6bd8ff3ab03065ade1dd0451606387fa4dec0010dd4e8ac771077c26929ca",
+      "bytes": 113359,
+      "sha256": "87c6bd8ff3ab03065ade1dd0451606387fa4dec0010dd4e8ac771077c26929ca"
+    },
+    "examples/local_design/TUTORIAL_SCOPE.txt": {
+      "origin": "installed source",
+      "source_sha256": "7a78415ec41ccc299bdbf7ddd2b9a1929864e27879487156a0ea31fe8916e357",
+      "bytes": 228,
+      "sha256": "7a78415ec41ccc299bdbf7ddd2b9a1929864e27879487156a0ea31fe8916e357"
+    },
+    "examples/local_design/design_result.json": {
+      "origin": "installed source",
+      "source_sha256": "e81c62027ee09d868b0facbb093b59596f3d277e69cf128f5aded9d1ca4938d5",
+      "bytes": 967395,
+      "sha256": "e81c62027ee09d868b0facbb093b59596f3d277e69cf128f5aded9d1ca4938d5"
+    },
+    "examples/tutorial_input.json": {
+      "origin": "installed source",
+      "source_sha256": "979cb5504d42959ae13ea85ba7cfc0c29f936f2d0cd9e7c2da0d4c5181f7f356",
+      "bytes": 7440,
+      "sha256": "979cb5504d42959ae13ea85ba7cfc0c29f936f2d0cd9e7c2da0d4c5181f7f356"
+    },
+    "glossary.json": {
+      "origin": "installed source",
+      "source_sha256": "4ae9ad9f463f8f855957aa342246e4e8f9653724064b376f749466d82c2e582f",
+      "bytes": 21971,
+      "sha256": "4ae9ad9f463f8f855957aa342246e4e8f9653724064b376f749466d82c2e582f"
+    },
+    "imagers.json": {
+      "origin": "installed source",
+      "source_sha256": "937c3d85eee2a39730a304313b23d29eb78d5a2c77b091b587b8fd0cccf84b96",
+      "bytes": 597,
+      "sha256": "937c3d85eee2a39730a304313b23d29eb78d5a2c77b091b587b8fd0cccf84b96"
+    },
+    "inputs/errfi1_defaults.json": {
+      "origin": "installed source",
+      "source_sha256": "5c05cf625c25df809954fbe0e77cd670c5563c5d4ce1a46658e7091609d04b76",
+      "bytes": 11340,
+      "sha256": "5c05cf625c25df809954fbe0e77cd670c5563c5d4ce1a46658e7091609d04b76"
+    },
+    "inputs/errfi1_reference.json.gz": {
+      "origin": "installed source",
+      "source_sha256": "6fd4856cdffab25e14f8705fa1aa8ffb00ec79ac54346c110288baebc56e2fe8",
+      "bytes": 121264,
+      "sha256": "6fd4856cdffab25e14f8705fa1aa8ffb00ec79ac54346c110288baebc56e2fe8"
+    },
+    "inputs/target_sequences.fasta": {
+      "origin": "installed source",
+      "source_sha256": "877cdfc09c6c7bb2c854df29e2649d1113f87b38514b585e347c5855943da369",
+      "bytes": 12548,
+      "sha256": "877cdfc09c6c7bb2c854df29e2649d1113f87b38514b585e347c5855943da369"
+    },
+    "install.sh": {
+      "origin": "installed source",
+      "source_sha256": "5a8cc0bf90beddb7e1b673100740513de140a98fed1b34b65ca9a86547021c18",
+      "bytes": 8771,
+      "sha256": "5a8cc0bf90beddb7e1b673100740513de140a98fed1b34b65ca9a86547021c18"
+    },
+    "process_diagnostics.py": {
+      "origin": "installed source",
+      "source_sha256": "f114c7fa9dd299d6b3e62a6d29b4b91718c14d6c620fd61d65a28ce132df2777",
+      "bytes": 12558,
+      "sha256": "f114c7fa9dd299d6b3e62a6d29b4b91718c14d6c620fd61d65a28ce132df2777"
+    },
+    "requirements.txt": {
+      "origin": "installed source",
+      "source_sha256": "2cf351e68816961bb34db228383dcb8abc8ac53b4ce74295677d69929e94a24a",
+      "bytes": 223,
+      "sha256": "2cf351e68816961bb34db228383dcb8abc8ac53b4ce74295677d69929e94a24a"
+    },
+    "rna_avoidance.py": {
+      "origin": "installed source",
+      "source_sha256": "21596d291d99563efab96d7cbb693f09607aa64a1b580cb909b87b3eb3014f63",
+      "bytes": 12052,
+      "sha256": "21596d291d99563efab96d7cbb693f09607aa64a1b580cb909b87b3eb3014f63"
+    },
+    "run_summaries.py": {
+      "origin": "installed source",
+      "source_sha256": "3068f23e93656714c500af7027b3ff992c3e22b3f978870fa1849a58e61a0ee6",
+      "bytes": 9504,
+      "sha256": "3068f23e93656714c500af7027b3ff992c3e22b3f978870fa1849a58e61a0ee6"
+    },
+    "runtime_safety.py": {
+      "origin": "installed source",
+      "source_sha256": "52edaa7e6a7bf7c3919eee3e96238832791d40e6e7532d782c4983bd3a6106a3",
+      "bytes": 25719,
+      "sha256": "52edaa7e6a7bf7c3919eee3e96238832791d40e6e7532d782c4983bd3a6106a3"
+    },
+    "sequence_tools.py": {
+      "origin": "installed source",
+      "source_sha256": "3fa44bebf2e503d28b1e74723e30fb55262139a21104cc71bdd873186ece99a1",
+      "bytes": 13428,
+      "sha256": "3fa44bebf2e503d28b1e74723e30fb55262139a21104cc71bdd873186ece99a1"
+    },
+    "setup/studio_install_helper.py": {
+      "origin": "installed source",
+      "source_sha256": "3264e67d8ec12d996cb06cadffdf48b12d1a317eaa90b93bcbd46086aae49639",
+      "bytes": 16884,
+      "sha256": "3264e67d8ec12d996cb06cadffdf48b12d1a317eaa90b93bcbd46086aae49639"
+    },
+    "specificity_store.py": {
+      "origin": "installed source",
+      "source_sha256": "3f5985f584930ea595f55c86f5bca81a3fc2387ceed92d0ae6681434f409c638",
+      "bytes": 31192,
+      "sha256": "3f5985f584930ea595f55c86f5bca81a3fc2387ceed92d0ae6681434f409c638"
+    },
+    "start_studio.sh": {
+      "origin": "installed source",
+      "source_sha256": "479416bac43e2e2aff388d74c2c087e7ab731c28af59cbbb2afd8a39aff5866f",
+      "bytes": 1773,
+      "sha256": "479416bac43e2e2aff388d74c2c087e7ab731c28af59cbbb2afd8a39aff5866f"
+    },
+    "strand_guard.py": {
+      "origin": "installed source",
+      "source_sha256": "1e73e7bca0e43374369900f929b3f535ba19d29dfe244a11436261f1d39260d7",
+      "bytes": 5366,
+      "sha256": "1e73e7bca0e43374369900f929b3f535ba19d29dfe244a11436261f1d39260d7"
+    },
+    "studio.py": {
+      "origin": "installed source",
+      "source_sha256": "31247a10dc0ee0cac4f9e6262089c572e6c53821591d19804d5dbf79b0ae2b6a",
+      "bytes": 67531,
+      "sha256": "31247a10dc0ee0cac4f9e6262089c572e6c53821591d19804d5dbf79b0ae2b6a"
+    },
+    "studio_launcher.py": {
+      "origin": "installed source",
+      "source_sha256": "04c6fca90f582e9cea1cea71de1ea99ad2485d58d6e60e20c2db755b9a3f84c7",
+      "bytes": 14461,
+      "sha256": "04c6fca90f582e9cea1cea71de1ea99ad2485d58d6e60e20c2db755b9a3f84c7"
+    },
+    "tests/test_adaptive_lengths.py": {
+      "origin": "installed source",
+      "source_sha256": "46935b81bb59131c2c61f8d99a87a89120e9a68f91a850d6763ae70c8eb9b66d",
+      "bytes": 9588,
+      "sha256": "46935b81bb59131c2c61f8d99a87a89120e9a68f91a850d6763ae70c8eb9b66d"
+    },
+    "tests/test_alignment_performance.py": {
+      "origin": "installed source",
+      "source_sha256": "515209701075210d23492a2c5c9428355e28d53b8eedd0d4a84139a670ad807f",
+      "bytes": 10183,
+      "sha256": "515209701075210d23492a2c5c9428355e28d53b8eedd0d4a84139a670ad807f"
+    },
+    "tests/test_auto_recovery_ui.js": {
+      "origin": "installed source",
+      "source_sha256": "5ad195eb90dc203bf257fd41e2b8d428c35bee49aaa7c63b42e6b775ab5ebed0",
+      "bytes": 12372,
+      "sha256": "5ad195eb90dc203bf257fd41e2b8d428c35bee49aaa7c63b42e6b775ab5ebed0"
+    },
+    "tests/test_automatic_recovery.py": {
+      "origin": "installed source",
+      "source_sha256": "7b376ed83ba2414177d81d748c484b02f4ddf58244721507b21a8b1ed9484c4a",
+      "bytes": 15848,
+      "sha256": "7b376ed83ba2414177d81d748c484b02f4ddf58244721507b21a8b1ed9484c4a"
+    },
+    "tests/test_binding_diagram.js": {
+      "origin": "installed source",
+      "source_sha256": "79785e449247402f5ec6f94acd7d52e91c12320719c1277a77e2a9facebb55df",
+      "bytes": 5241,
+      "sha256": "79785e449247402f5ec6f94acd7d52e91c12320719c1277a77e2a9facebb55df"
+    },
+    "tests/test_binding_viewer_generation.py": {
+      "origin": "installed source",
+      "source_sha256": "1384a1fb16a06065f07ac6afe839be1696252dc4fb87a101ab559371639062e0",
+      "bytes": 1598,
+      "sha256": "1384a1fb16a06065f07ac6afe839be1696252dc4fb87a101ab559371639062e0"
+    },
+    "tests/test_blast_adapter.py": {
+      "origin": "installed source",
+      "source_sha256": "82128a5c800084c517f0991bc85bc85c597b2400c324d15f2fa3236f2b7cd260",
+      "bytes": 4995,
+      "sha256": "82128a5c800084c517f0991bc85bc85c597b2400c324d15f2fa3236f2b7cd260"
+    },
+    "tests/test_blast_batch_groups.py": {
+      "origin": "installed source",
+      "source_sha256": "428d275f7852de7aaf651a54df0d232319ad05eb1ba99fc4cceeadd87b012dce",
+      "bytes": 10656,
+      "sha256": "428d275f7852de7aaf651a54df0d232319ad05eb1ba99fc4cceeadd87b012dce"
+    },
+    "tests/test_blast_batches.py": {
+      "origin": "installed source",
+      "source_sha256": "1d766dbda2f1fb681b506e48afb23ff5b9b3757a95969a2dac73f692cc1aa88d",
+      "bytes": 16191,
+      "sha256": "1d766dbda2f1fb681b506e48afb23ff5b9b3757a95969a2dac73f692cc1aa88d"
+    },
+    "tests/test_blast_resource_batches.py": {
+      "origin": "installed source",
+      "source_sha256": "6080a6d08b9d1b851bd1f5d9a6ea2f7476178ae01623cf5662d5a941790543cf",
+      "bytes": 5150,
+      "sha256": "6080a6d08b9d1b851bd1f5d9a6ea2f7476178ae01623cf5662d5a941790543cf"
+    },
+    "tests/test_blast_stream.py": {
+      "origin": "installed source",
+      "source_sha256": "9bc1a1333461405893edac41dc5d35386ee3a0e205ea6cb7b984a3190fa103a8",
+      "bytes": 8993,
+      "sha256": "9bc1a1333461405893edac41dc5d35386ee3a0e205ea6cb7b984a3190fa103a8"
+    },
+    "tests/test_checkpoint_identity.py": {
+      "origin": "installed source",
+      "source_sha256": "960e14470c350ae258e8fc18c85e7a1976cfcd543f8227b4b0f4f93479a3c183",
+      "bytes": 12938,
+      "sha256": "960e14470c350ae258e8fc18c85e7a1976cfcd543f8227b4b0f4f93479a3c183"
+    },
+    "tests/test_checkpoint_server.py": {
+      "origin": "installed source",
+      "source_sha256": "6580be6c6c2d80c06b5b8a6e7352f6f1f99d2fefdd9d4f221b4ed39200301d8f",
+      "bytes": 17112,
+      "sha256": "6580be6c6c2d80c06b5b8a6e7352f6f1f99d2fefdd9d4f221b4ed39200301d8f"
+    },
+    "tests/test_checkpoint_ui.js": {
+      "origin": "installed source",
+      "source_sha256": "728d28e3ee9708de68805bb6a15c0355a8ab8e48ed1336a04e7bd1d0f715c28c",
+      "bytes": 9289,
+      "sha256": "728d28e3ee9708de68805bb6a15c0355a8ab8e48ed1336a04e7bd1d0f715c28c"
+    },
+    "tests/test_compact_outputs.py": {
+      "origin": "installed source",
+      "source_sha256": "3e334de744d74b473a4d47b069a0d13ea6ac82f6cee50f59459bce2530127bad",
+      "bytes": 11972,
+      "sha256": "3e334de744d74b473a4d47b069a0d13ea6ac82f6cee50f59459bce2530127bad"
+    },
+    "tests/test_compact_storage_backend.py": {
+      "origin": "installed source",
+      "source_sha256": "3a570f127553abcb3af11f18370965d03a292ddc87998b40c264994ef6f1ac20",
+      "bytes": 5430,
+      "sha256": "3a570f127553abcb3af11f18370965d03a292ddc87998b40c264994ef6f1ac20"
+    },
+    "tests/test_completed_runs_ui.js": {
+      "origin": "installed source",
+      "source_sha256": "85e6374d7b24b48528140b15e9c9fb4ff865e7c3ca2a674ed12785003173e765",
+      "bytes": 5307,
+      "sha256": "85e6374d7b24b48528140b15e9c9fb4ff865e7c3ca2a674ed12785003173e765"
+    },
+    "tests/test_concise_retention.py": {
+      "origin": "installed source",
+      "source_sha256": "cbc35cf93168850598994abb49527e5b7284dac35aa1b7f9c5be7ea624f65bd7",
+      "bytes": 4953,
+      "sha256": "cbc35cf93168850598994abb49527e5b7284dac35aa1b7f9c5be7ea624f65bd7"
+    },
+    "tests/test_consolidated_release.py": {
+      "origin": "installed source",
+      "source_sha256": "801be04891dfa2b2ce654f63e629ee1d1db47b1c73ccb3e6533eeb3001d310f8",
+      "bytes": 8872,
+      "sha256": "801be04891dfa2b2ce654f63e629ee1d1db47b1c73ccb3e6533eeb3001d310f8"
+    },
+    "tests/test_coverage_panel.js": {
+      "origin": "installed source",
+      "source_sha256": "eebf278b6dd6f9f1df5d92671774caae0ce6050007ef1eca9367dd29999302f9",
+      "bytes": 4574,
+      "sha256": "eebf278b6dd6f9f1df5d92671774caae0ce6050007ef1eca9367dd29999302f9"
+    },
+    "tests/test_coverage_report.py": {
+      "origin": "installed source",
+      "source_sha256": "b1f1259c3e47fba72c80d84800d60e8fccfda1c923093a47ea26c70d672741a7",
+      "packaging_edit": "Resolve optional saved-experiment fixture relative to this repository; private results remain excluded.",
+      "bytes": 23638,
+      "sha256": "1200df1236f934e9723f57bfd4ced204bbbc1ef6980859daa6f2cafe6a1f02f5"
+    },
+    "tests/test_cross_primary_disabled.py": {
+      "origin": "installed source",
+      "source_sha256": "b1fd99a8cbc3800e50f5e76aef3f3e99671e5901a1f57fe0af289d53a232cb84",
+      "bytes": 18878,
+      "sha256": "b1fd99a8cbc3800e50f5e76aef3f3e99671e5901a1f57fe0af289d53a232cb84"
+    },
+    "tests/test_design.py": {
+      "origin": "installed source",
+      "source_sha256": "bd9c079cf0c56264d959ee4f857d99b0a8d941b4159af7df0a16accbf6fc8a2c",
+      "bytes": 17561,
+      "sha256": "bd9c079cf0c56264d959ee4f857d99b0a8d941b4159af7df0a16accbf6fc8a2c"
+    },
+    "tests/test_design_checkpoints.py": {
+      "origin": "installed source",
+      "source_sha256": "0b020546642b62eaab58718c636ad47b2425cdb8ee8b09b9dcc139225aef851f",
+      "bytes": 13674,
+      "sha256": "0b020546642b62eaab58718c636ad47b2425cdb8ee8b09b9dcc139225aef851f"
+    },
+    "tests/test_errfi1_defaults.py": {
+      "origin": "installed source",
+      "source_sha256": "ef6f1b6aa10a8c7887bed24235aa4b878df3b33b18c5cf13cd5e97c6b9306aa7",
+      "packaging_edit": "Recognize the verified November 3 sequence-cache extraction with exact helper/wrapper hash checks and narrow normalization; retain original scientific baseline hashes and existing behavior parity tests.",
+      "bytes": 12842,
+      "sha256": "bc713b711d9f7582fc0837356f7bd05bb1ff920bacfb0161d2637d6b1ce64d6b"
+    },
+    "tests/test_imager_input.py": {
+      "origin": "installed source",
+      "source_sha256": "f8922114ce60f8dc904b1ff04f52a1914657487a54e10cd96cf019904c7ff29a",
+      "bytes": 8889,
+      "sha256": "f8922114ce60f8dc904b1ff04f52a1914657487a54e10cd96cf019904c7ff29a"
+    },
+    "tests/test_poll_recovery.js": {
+      "origin": "installed source",
+      "source_sha256": "884b9e0fa865c53b9290d09ab28ab6c54f38682cdf661800850d28a5addf9b34",
+      "bytes": 2999,
+      "sha256": "884b9e0fa865c53b9290d09ab28ab6c54f38682cdf661800850d28a5addf9b34"
+    },
+    "tests/test_probe_coverage.js": {
+      "origin": "installed source",
+      "source_sha256": "71df75b501f91069abcc6f00c6f0c08f5e90ace19f3edd740a5b0f7c93e4055c",
+      "bytes": 10110,
+      "sha256": "71df75b501f91069abcc6f00c6f0c08f5e90ace19f3edd740a5b0f7c93e4055c"
+    },
+    "tests/test_process_diagnostics.py": {
+      "origin": "installed source",
+      "source_sha256": "0722ea983659062e0027c134416ee48971da5ae516a24eaaec479cb445265550",
+      "bytes": 18684,
+      "sha256": "0722ea983659062e0027c134416ee48971da5ae516a24eaaec479cb445265550"
+    },
+    "tests/test_rna_direction.py": {
+      "origin": "installed source",
+      "source_sha256": "9d74162d95b934386df23ba54b1ca8405932496fc786c40aefd52c001df0b2f3",
+      "bytes": 13270,
+      "sha256": "9d74162d95b934386df23ba54b1ca8405932496fc786c40aefd52c001df0b2f3"
+    },
+    "tests/test_run_summaries.py": {
+      "origin": "installed source",
+      "source_sha256": "9d7b03eb2ddc1ab84fbcb454afaf67cb38c9136d9f79ac162e61ddaeef2bbb1f",
+      "bytes": 5814,
+      "sha256": "9d7b03eb2ddc1ab84fbcb454afaf67cb38c9136d9f79ac162e61ddaeef2bbb1f"
+    },
+    "tests/test_runtime_safety.py": {
+      "origin": "installed source",
+      "source_sha256": "06e6ada5ce4b5de8911dd433adc15a2148c315020718650ec8f80764e3bdb4bf",
+      "bytes": 41070,
+      "sha256": "06e6ada5ce4b5de8911dd433adc15a2148c315020718650ec8f80764e3bdb4bf"
+    },
+    "tests/test_score_checkpoints.py": {
+      "origin": "installed source",
+      "source_sha256": "7cf4b84016e8d1df9b75e31ae5594c8ddfff4cff37455ab3363aa331d31bee84",
+      "bytes": 22677,
+      "sha256": "7cf4b84016e8d1df9b75e31ae5594c8ddfff4cff37455ab3363aa331d31bee84"
+    },
+    "tests/test_server_recovery.py": {
+      "origin": "installed source",
+      "source_sha256": "2ed5ba83d00f6bfc345f60e0d62decc13077cec668228a19b950f7eab043e108",
+      "bytes": 13336,
+      "sha256": "2ed5ba83d00f6bfc345f60e0d62decc13077cec668228a19b950f7eab043e108"
+    },
+    "tests/test_settings_package.py": {
+      "origin": "installed source",
+      "source_sha256": "91a3f7820c3f7fafb3bb098fc63f43b460df936bf4282d9cec8a1aa75899ffa1",
+      "bytes": 11855,
+      "sha256": "91a3f7820c3f7fafb3bb098fc63f43b460df936bf4282d9cec8a1aa75899ffa1"
+    },
+    "tests/test_single_strand_guard.py": {
+      "origin": "installed source",
+      "source_sha256": "145a3245af0291e3cf8ce343a9e0765400d5eebbad03e557d02dd13c68dfeea1",
+      "bytes": 8422,
+      "sha256": "145a3245af0291e3cf8ce343a9e0765400d5eebbad03e557d02dd13c68dfeea1"
+    },
+    "tests/test_spatial_search.py": {
+      "origin": "installed source",
+      "source_sha256": "b637e000e20be806267105ae12d890ac4bc4a36d10b83d1cbb05c4d4cc49958b",
+      "bytes": 10504,
+      "sha256": "b637e000e20be806267105ae12d890ac4bc4a36d10b83d1cbb05c4d4cc49958b"
+    },
+    "tests/test_specificity_store_durability.py": {
+      "origin": "installed source",
+      "source_sha256": "68774ef3b74f7962d9f8afd4de881dc987371d72c8af04c8f24e4c37c210964e",
+      "bytes": 9339,
+      "sha256": "68774ef3b74f7962d9f8afd4de881dc987371d72c8af04c8f24e4c37c210964e"
+    },
+    "tests/test_streaming_downloads.py": {
+      "origin": "installed source",
+      "source_sha256": "71a1f6d16dff1431e271267c5c75c68897effe9d998c0a5b86b3e663446984b4",
+      "bytes": 2814,
+      "sha256": "71a1f6d16dff1431e271267c5c75c68897effe9d998c0a5b86b3e663446984b4"
+    },
+    "tests/test_studio_launcher.py": {
+      "origin": "installed source",
+      "source_sha256": "ba45b43e5d183eba4f245e631e1ecc6f16f325b439633fdf1993ce1b0d1bf79c",
+      "bytes": 14508,
+      "sha256": "ba45b43e5d183eba4f245e631e1ecc6f16f325b439633fdf1993ce1b0d1bf79c"
+    },
+    "tests/test_subject_cache.py": {
+      "origin": "installed source",
+      "source_sha256": "ea6fb544d5ad2653a9e8ae912f2efb04bb1cb668d4d0104fc98d4a9e0432c11b",
+      "bytes": 10842,
+      "sha256": "ea6fb544d5ad2653a9e8ae912f2efb04bb1cb668d4d0104fc98d4a9e0432c11b"
+    },
+    "tests/test_v161_reporting.py": {
+      "origin": "installed source",
+      "source_sha256": "8cd9832232207909708ae94ea726f73bb5fa01988078e02460bfad69e6ac18c5",
+      "packaging_edit": "Use Node on PATH and skip when unavailable instead of using a personal Codex runtime path.",
+      "bytes": 11218,
+      "sha256": "1481695ea9ce6a7362ad0a0f0cfaac7b9d2897527a2a98e4816edf12b09ab13d"
+    },
+    "tests/test_worker_supervision.py": {
+      "origin": "installed source",
+      "source_sha256": "4dcf7b60c290ae37c01d1f1953f259770212c0ccf0c6a8666c13d82a3a1e596c",
+      "bytes": 17153,
+      "sha256": "4dcf7b60c290ae37c01d1f1953f259770212c0ccf0c6a8666c13d82a3a1e596c"
+    },
+    "verification/errfi1_baseline.json": {
+      "origin": "installed source",
+      "source_sha256": "6de1a9fb6a68b1632d68592ab244c913ff40b4afb5409856b2928fe7da57406a",
+      "packaging_edit": "Personal absolute paths replaced with <local-path-omitted>; scientific values unchanged.",
+      "bytes": 29248,
+      "sha256": "dd4bd1d8b4efc08f59eff5c024fe46d7af15f794345761ce9d140da91142a638"
+    },
+    "verification/errfi1_shortlist_validation.json": {
+      "origin": "installed source",
+      "source_sha256": "66ce37eb337171c73cc71f3f421a8269b5fe669f56c9be56dadc99efb9fa2f26",
+      "bytes": 5661,
+      "sha256": "66ce37eb337171c73cc71f3f421a8269b5fe669f56c9be56dadc99efb9fa2f26"
+    },
+    "verification/source_manifest.json": {
+      "origin": "installed source",
+      "source_sha256": "ac837d7aae33691351d69c26f7b6f8bf20e00a9324baeb68fd3e4e318926b566",
+      "bytes": 1973,
+      "sha256": "ac837d7aae33691351d69c26f7b6f8bf20e00a9324baeb68fd3e4e318926b566"
+    },
+    "web/app.js": {
+      "origin": "installed source",
+      "source_sha256": "1b0b5b1fc26c152e824f82636ef2e28c4e6ac25b88f0a92e93fc130233a84a2b",
+      "bytes": 101936,
+      "sha256": "1b0b5b1fc26c152e824f82636ef2e28c4e6ac25b88f0a92e93fc130233a84a2b"
+    },
+    "web/coverage_panel.js": {
+      "origin": "installed source",
+      "source_sha256": "766b0bc04d15f04cdec0e760c610fb0ba4aecc32a9bc620096702810bf9db02e",
+      "bytes": 9852,
+      "sha256": "766b0bc04d15f04cdec0e760c610fb0ba4aecc32a9bc620096702810bf9db02e"
+    },
+    "web/imager_binding.js": {
+      "origin": "installed source",
+      "source_sha256": "f40c45be7b786c1bb69771cba8a23eaae7ba4a7996a14a88dce562c866fe2f02",
+      "bytes": 10598,
+      "sha256": "f40c45be7b786c1bb69771cba8a23eaae7ba4a7996a14a88dce562c866fe2f02"
+    },
+    "web/index.html": {
+      "origin": "installed source",
+      "source_sha256": "9a39b939ec804c5539d365b18870f7befa93882b398ce092cbb31e6fca2135cd",
+      "bytes": 33838,
+      "sha256": "9a39b939ec804c5539d365b18870f7befa93882b398ce092cbb31e6fca2135cd"
+    },
+    "web/probe_coverage.js": {
+      "origin": "installed source",
+      "source_sha256": "fc5cc5cc3805d9e6d24afab07060b972cc6cc98e0fff3229335a809d9488990f",
+      "bytes": 19267,
+      "sha256": "fc5cc5cc3805d9e6d24afab07060b972cc6cc98e0fff3229335a809d9488990f"
+    },
+    "web/styles.css": {
+      "origin": "installed source",
+      "source_sha256": "a9b499c237509cdedb20642ad719e47a20fe24ddcc0339fc0aeb2440aca9b231",
+      "bytes": 449786,
+      "sha256": "a9b499c237509cdedb20642ad719e47a20fe24ddcc0339fc0aeb2440aca9b231"
+    }
+  }
+}

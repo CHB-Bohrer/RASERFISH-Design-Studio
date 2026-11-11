@@ -1,0 +1,210 @@
+{
+  "region_width": {
+    "label": "Tracing region width / genomic resolution",
+    "text": "Number of DNA base pairs assigned to one tracing position. A width of 2,000 bp creates adjacent 2-kb regions whose nominal centers are 2 kb apart. This is genomic sampling, not nanometer optical resolution. Real localization is affected by where probes bind inside each region."
+  },
+  "primary": {
+    "label": "Primary probe",
+    "text": "The complete DNA oligo that you order: docking sequence + TT spacer + genomic binding arm + TT spacer + the same docking sequence. This app selects primaries using their target binding, specificity, structure and compatibility."
+  },
+  "binding_arm": {
+    "label": "DNA-binding arm",
+    "text": "Only the segment of a primary intended to hybridize to the target DNA. Its length and target-duplex Tm exclude imaging handles and spacers. Off-target searches also inspect complete primaries to catch handle/arm junction matches. A single explicit DNA-bound strand is required for the whole tracing set. The inspector reports it for each selected primary."
+  },
+  "imager": {
+    "label": "Imaging probe / readout",
+    "text": "The separate fluorescent DNA oligo that is added during imaging, such as Dp7. It binds a short docking site on a primary probe, not the primary's genomic DNA-binding arm. All stored imager sequences are written 5-prime to 3-prime. In step 3 you can enter either this imager or its docking site; an explicit input-type choice determines which is being supplied."
+  },
+  "docking": {
+    "label": "Docking sequence",
+    "text": "The short imager-binding DNA sequence placed at each end of a primary, outside the TT spacers. It is the reverse complement of the fluorescent imaging oligo when both are written 5-prime to 3-prime. Enter it directly by choosing the docking-site input type; the app derives the imaging oligo. Do not include the TT spacers or genomic binding arm. A docking site is NOT the genomic target DNA."
+  },
+  "readout_reuse": {
+    "label": "Reusing an imager",
+    "text": "Two regions with the same docking sequence will light up together when that imager is added. Reusing the identical imager in different rounds does NOT make those regions separately identifiable. The default blocks repeated imagers; an explicit merged-label override is available."
+  },
+  "tm": {
+    "label": "Tm: predicted melting temperature",
+    "text": "Predicted temperature at which an ideal probe-target duplex is half dissociated under the chosen model and concentration assumptions. This is not a measured in-cell melting temperature, a hairpin temperature, or proof a probe works. The same profile is used before and after selection. The current user default is strictly 45 < Tm < 55 C, a change to the predicted target-duplex selection window only. The experimental hybridization temperature, aqueous folding temperature and off-target thresholds are NOT automatically raised."
+  },
+  "profile": {
+    "label": "Thermodynamic profile",
+    "text": "The selected nearest-neighbor table, salt, strand concentrations and empirical formamide correction. The default OligoMiner-style profile uses DNA_NN3, 390 mM sodium, 2 nM primary, trace target, and 50% formamide x 0.65 C/percent. It is not a verified reconstruction of the Ellenberg group's exact command line."
+  },
+  "trace_target": {
+    "label": "2 nM / trace target",
+    "text": "Assumes 2 nM of EACH primary species in solution and very little complementary target relative to that probe. Zero is the mathematical trace-target approximation, not absence of DNA. It does not measure the effective local target concentration inside a fixed cell."
+  },
+  "gc": {
+    "label": "GC content",
+    "text": "Percentage of the DNA-binding arm that is G or C. GC, arm length and base order all influence duplex stability. Minimum and maximum GC are explicit selection gates; GC alone does not certify specificity or lack of folding. In the retained project settings, 0% means no independent lower-GC filter and 76% is an inherited project upper bound. The paper's 40-50% GC rule applies to short imaging oligos, not primary binding arms."
+  },
+  "offtarget": {
+    "label": "Off-target",
+    "text": "A possible binding site outside this primary's permitted target interval and strand. Desired human loci are exempt only when explicitly identified. Matches in another tracing region can blur the tracing identity even on the same chromosome."
+  },
+  "allowed": {
+    "label": "Allowed human interval",
+    "text": "Chromosome, coordinates and physical bound strand where binding is intentional. Coordinate-input mode automatically allows each bin's own interval, not the entire human genome or all other bins. For constructs, add verified permitted native intervals manually. Allowed hits remain in the audit."
+  },
+  "report_only": {
+    "label": "Human hits: report only",
+    "text": "Advanced override: still run and retain the human-genome search, but do not penalize or reject candidates because of human genomic hits. RNA and local cross-region checks remain active. This can retain widely binding probes; it is not a specificity pass."
+  },
+  "offtarget_tm": {
+    "label": "Off-target duplex Tm",
+    "text": "Tm estimate for the actual aligned DNA segment, with supported mismatch parameters. It is NOT the on-target Tm reused for an off-target. Gaps or unsupported mismatch contexts are UNKNOWN, not zero. An exact-subsegment proxy is separately labeled; RNA hits are sequence-only in this version."
+  },
+  "delta_tm": {
+    "label": "On-target minus off-target Tm",
+    "text": "On-target arm Tm minus the estimated DNA off-target alignment Tm using the same profile. A small difference can mean little thermal discrimination. Estimates involving short segments, mismatches and formamide remain approximate; a margin is not a guaranteed wash condition."
+  },
+  "hit_count": {
+    "label": "Distinct site clusters",
+    "text": "Overlapping alignments to the same reference sequence and strand are merged, including arm/full-primary duplicates. Different sites remain separate. Alternative/patch contigs are NOT silently equated to extra physical chromosomes, nor silently discarded. Counts describe searched reference records, not measured genome copy number."
+  },
+  "high_hit": {
+    "label": "High-Tm off-target site",
+    "text": "An unintended DNA alignment or exact matched subsegment whose estimated Tm reaches the configured high threshold. The default allows zero such site clusters. The moderate/high site-count cap also penalizes numerous weaker candidates. These are adjustable screening heuristics, not experimentally validated failure thresholds."
+  },
+  "unknown": {
+    "label": "UNKNOWN / NOT RUN",
+    "text": "Evidence is missing or the model cannot evaluate this case. Unknown never means passed. Full selection stops if required BLAST databases or the folding engine are missing. Local-preview mode labels its missing analyses explicitly."
+  },
+  "identity": {
+    "label": "Alignment identity",
+    "text": "Percentage of columns in a returned sequence alignment that match. A 100%-identity 18-base match is very different from a complete 55-base match. Interpret it together with aligned length, query coverage, location and estimated duplex stability."
+  },
+  "query_coverage": {
+    "label": "Query coverage",
+    "text": "Fraction of the searched arm or complete primary covered by one alignment. The query type is shown. Coverage is not an experimental fraction of bound molecules."
+  },
+  "evalue": {
+    "label": "BLAST E-value",
+    "text": "Expected number of chance alignments with comparable sequence score in a database search. It is not a hybridization probability. BLAST is a heuristic search, and a zero-hit result does not prove no possible binding."
+  },
+  "folding": {
+    "label": "Complete-primary folding",
+    "text": "ViennaRNA using DNA Mathews 2004 parameters analyzes handles, spacers and arm together. The current model is aqueous at the displayed temperature and salt. It does not model 50% formamide, pseudoknots, G-quadruplexes, target competition, or the equilibrium of the entire pool."
+  },
+  "unpaired": {
+    "label": "Mean arm unpaired probability",
+    "text": "Average of the predicted unpaired probability of each base in the binding arm, from the single-primary structural ensemble. Higher suggests more available arm bases in this aqueous model. It is NOT the fraction of probe molecules that bind DNA or the probability the whole arm is unstructured."
+  },
+  "mfe": {
+    "label": "Minimum free energy (MFE)",
+    "text": "Energy, in kcal/mol, of a lowest-energy predicted structure under the stated model. More negative means a more favorable model structure, not necessarily a failed probe. Candidate filtering uses explicit user-visible thresholds and rankings."
+  },
+  "cofold": {
+    "label": "Cofold gain relative to separate primaries",
+    "text": "Minimum energy of two cofolded primaries minus the sum of the two separate monomer minimum energies. A more negative value can flag competing inter-primary structure. This is NOT a binding fraction at 2 nM, a dimer melting temperature, or a whole-pool equilibrium calculation."
+  },
+  "exact_stem": {
+    "label": "Exact complementary stem",
+    "text": "Longest uninterrupted Watson-Crick-complementary tract between two complete primaries, including self-pairs. A geometry check only. A full fold can combine several shorter stems and loops, so a short exact stem does not rule out a structured interaction."
+  },
+  "footprint": {
+    "label": "Probe footprint and minimum gap",
+    "text": "Default footprint extends the binding arm into immediately adjacent TT/handle bases for as long as perfect target complementarity continues. All exact repeat copies and neighboring-bin probes must leave the configured gap. This is a defined sequence-footprint model, not a measurement of physically unpaired DNA."
+  },
+  "bin_gap": {
+    "label": "Adjacent regions versus oligo spacing",
+    "text": "Tracing regions are contiguous, with zero gap between regions. Individual primary probes inside them still need the minimum footprint gap (default 5 bp). A 2-kb tracing interval and a 5-bp primary gap are different parameters."
+  },
+  "repeats": {
+    "label": "Repeated binding sites",
+    "text": "Multiple noncompeting copies inside the SAME tracing region can increase intended binding opportunities. A full-arm copy in a different region is rejected by default because it compromises region identity. Unique oligo count and exact site count are shown separately."
+  },
+  "candidate": {
+    "label": "Candidate versus selected primary",
+    "text": "A candidate is an alternative arm/handle combination being considered. It receives QC before selection. Only selected candidates enter the new candidate-order CSV. Every shortlisted candidate retains its rejection or nonselection reason; old order files are never overwritten."
+  },
+  "shortlist": {
+    "label": "Spatially stratified shortlist",
+    "text": "A finite subset of generated candidates receiving expensive QC. Adaptive mode uses independent preferred-arm and longer-arm budgets (initially 160 + 80 per region). Each band is distributed across spatial buckets and favors shorter passing alternatives. The per-run cap includes BOTH bands; exceeding it stops with a message rather than truncating or relaxing QC. Shortlisting can miss usable alternatives; increasing these budgets or alternatives per start widens the search at additional runtime."
+  },
+  "selection": {
+    "label": "Balanced selection",
+    "text": "A deterministic greedy search alternates among the least-filled regions, favors well-distributed binding sites and lower modeled risk, and checks footprint/pair conflicts before accepting a candidate. It searches replacements, but does not prove a globally optimal pool. Thresholds are never relaxed silently to fill a region."
+  },
+  "coverage": {
+    "label": "Sequence coverage",
+    "text": "Percentage of a region covered by the union of exact binding-arm intervals. Overlaps count once. Uncovered sequence is not necessarily inaccessible; it may have failed filters or not been selected."
+  },
+  "centroid": {
+    "label": "Binding-site centroid",
+    "text": "Mean of exact binding-site centers in a region, with each exact site counted once. Compare it with the nominal region center to spot uneven sampling. It is not an intensity-weighted fluorescence prediction or a 3D coordinate."
+  },
+  "distribution": {
+    "label": "Within-region distribution",
+    "text": "Exact binding-site centers are counted in ten equal subintervals. This reveals clusters and empty parts. Equal-width regions do not ensure uniform probe binding or equal fluorescent brightness."
+  },
+  "shortfall": {
+    "label": "Count target and minimum",
+    "text": "Target is the desired number of distinct primaries per region; minimum marks underfilled regions for review. The software reports a shortfall rather than quietly weakening specificity or structure constraints."
+  },
+  "h3k27ac": {
+    "label": "H3K27ac annotation",
+    "text": "A cell-dependent histone modification track used here as biological context, not as an automatic FISH-accessibility or specificity filter. Called peaks and continuous ChIP-seq signal are different data types. No peak in a file is not proof of biological absence."
+  },
+  "proxy_cell": {
+    "label": "Proxy cell-line track",
+    "text": "If a compatible track for the requested cell is unavailable, the search tries HCT116 then IMR-90. The displayed track keeps its actual cell, experiment and file accession. A proxy is NOT data measured in your chosen cell line. A network error is not treated as evidence of no available data."
+  },
+  "assembly": {
+    "label": "Genome assembly and coordinates",
+    "text": "Public genomic mode is GRCh38/hg38 in this release. GUI coordinates are 1-based inclusive; BED/UCSC inputs are converted from 0-based half-open. No silent hg19-to-hg38 conversion occurs. Synthetic constructs require real annotations or verified coordinate mapping; their names are not genomic coordinates."
+  },
+  "presets": {
+    "label": "Paper-informed starting preset",
+    "text": "Presets populate the design controls and record their sources. The current user-requested default is adaptive 36-42 nt preferred / extensions up to 90 nt and a 45-55 C on-target Tm window. The original Ellenberg-informed 36-42 nt / 42-50 C fixed-range preset remains selectable. Concentration, formamide and advanced QC thresholds remain explicit project assumptions. Presets never edit old order files."
+  },
+  "rna_direction": {
+    "label": "Gene direction, RNA sense and DNA-bound strand",
+    "text": "Gene direction and DNA-bound strand are different labels. A forward RNA is sequence-compatible with a probe targeting top DNA; a reverse RNA with a probe targeting bottom DNA. Strict mode rejects conflicts on the fixed tracing strand and never flips it. Default transcript-only mode displays gene directions as context but does not use whole-span masking. Independent RNA sequence screening remains enabled."
+  },
+  "rna_screen": {
+    "label": "Complementary RNA-risk screen",
+    "text": "Search the RNA-sense sequences for complementarity to the arm and complete primary. Same-sense identity is not binding. Default strong RNA rule: identity >=90% and (aligned length >=30 nt or query coverage >=90%), with zero strong clusters allowed. In strict mode, exact complementary tracts >=18 bases also count toward the hard rejection gate. Shorter partial hits remain review evidence in transcript-only mode. No RNA-DNA thermodynamic stability or cell-specific expression is inferred."
+  },
+  "gene_span": {
+    "label": "Transcribed span and unspliced RNA",
+    "text": "A gene/transcript span can include introns and multiple transcript models. Strict mode treats the entire span as a potential unspliced RNA and can exclude large portions of a fixed-strand trace. Default transcript-only mode does not generate these inferred span sequences. Mature-reference screening does not rule out unspliced or unannotated RNA binding."
+  },
+  "strand_conflict": {
+    "label": "Opposite-strand gene overlap",
+    "text": "The trace-wide DNA-bound strand is fixed. Under strict mode, any conflicting gene direction excludes the candidate; it never switches strand. Under transcript-only mode, annotation overlap alone is not a hard gate, but complementary transcript-sequence hits can still reject a candidate."
+  },
+  "adaptive_length": {
+    "label": "Adaptive binding-arm length",
+    "text": "Prefer 36-42 nt arms. When enabled, scan longer alternatives one base at a time up to the adjustable ceiling (90 nt initially). For each start and length band, retain the shortest alternatives passing composition, Tm, RNA-direction and exact-site checks. Short and extended candidates use separate finite QC shortlists so longer alternatives do not displace the short baseline. All shortlisted sequences receive the same remaining genome/RNA/folding checks before selection. The chosen set may use longer arms to recover positions where short arms cannot meet Tm or other rules. Longer is not automatically better, and not every possible alternative gets full QC. The extension ceiling excludes docking handles and spacers."
+  },
+  "selection_goal": {
+    "label": "Maximum compatible binding sites versus a count target",
+    "text": "The default tries a preferred-length baseline, that baseline with additional candidates, joint site-packing and spatial-balance greedy selections. It keeps the feasible result with most nonoverlapping exact binding sites; ties prefer filled regions, balanced counts, more distinct oligos, spread and less total arm footprint. Intended repeat copies count as sites, not duplicate order rows. All QC, pair and five-base footprint constraints remain. The target-per-region number is a benchmark, not a cap in this mode; target-count mode is available separately. Finite shortlists and greedy searches do not guarantee the global maximum or experimental brightness."
+  },
+  "imager_input_type": {
+    "label": "Imaging oligo versus its binding-site / docking sequence",
+    "text": "These are two complementary DNA sequences on different molecules. Choose 'Imaging oligo itself' for the separate fluorescent oligo, or 'Sequence it binds to' for the short docking site on the primary. Always paste the supplied strand 5-prime to 3-prime. The app computes the other strand by reverse complementation and displays both before saving. For Dp7: imaging oligo CCGATACGAATA; docking site TATTCGTATCGG. The original entered type and sequence are saved; duplicate pairs are blocked across both input conventions. This is a sequence-convention check, not experimental barcode validation."
+  },
+  "sequence_polarity": {
+    "label": "5-prime to 3-prime and reverse complement",
+    "text": "Each independent DNA sequence is entered and stored in its own 5-prime-to-3-prime direction. Complementary strands are antiparallel, so the complementary sequence in 5-prime-to-3-prime notation is the REVERSE complement, not the simple complement. The optional pairing display deliberately shows the lower docking strand 3-prime to 5-prime; that display is not an input sequence. Genomic reference orientation and gene direction are handled separately in step 1."
+  },
+  "binding_diagram": {
+    "label": "Imaging-oligo binding diagram",
+    "text": "The gold row is a separate fluorescent imaging molecule, drawn 3-prime to 5-prime from left to right so each letter faces its complementary base. The purple row is the docking sequence on the primary, drawn 5-prime to 3-prime. A pairs with T; C pairs with G. Both stored and copied sequences remain 5-prime to 3-prime. Two identical docking sites can each bind a separate imager molecule; the teal middle DNA-binding arm has a different role. The drawing shows intended base pairing only, not physical folding, binding strength, dye position, or occupancy. Hover or keyboard-focus a base pair to see the positions in each stored sequence."
+  },
+  "single_strand": {
+    "label": "One DNA strand for the entire RASER-FISH trace",
+    "text": "All primaries in ALL regions belonging to one trace must target the same physical DNA strand in a consistent reference orientation. RASER-FISH removes newly synthesized, substituted DNA; opposite parental strands can reside on different sister chromatids. Choose Top (+) or Bottom (-) once and retain it across separate runs. Gene annotations may exclude a candidate for RNA complementarity but must never switch its strand. This is a sequence-design safeguard, not proof that image points came from one chromatid or identification of maternal versus paternal homologs."
+  },
+  "rna_policy": {
+    "label": "RNA policy: transcript sequences versus whole-gene exclusion",
+    "text": "Default: search the public annotated-human-RNA database in full mode and explicit user RNA sequences; do not exclude candidates solely because they overlap a gene span. Long/high-identity complementary RNA hits still cause rejection under the configured cap. An isolated exact 18-base RNA match is review evidence, not an automatic rejection in this mode. Strict mode adds whole-gene/intron-span exclusion, inferred local unspliced sequences and the exact-tract hard gate. Neither policy can change the one chosen DNA strand. RNase treatment and RNA absence are not assumed."
+  },
+  "rna_input_scope": {
+    "label": "Unassessed RNA and experimental cleanup",
+    "text": "Public transcript databases do not cover every nascent, antisense, enhancer or custom-construct RNA. The program does not know whether RNase cleanup was performed or complete. Default relaxed screening accepts that additional uncertainty; it is not proof the probes cannot bind RNA. Supply relevant explicit RNA sequences and review experimental controls."
+  }
+}

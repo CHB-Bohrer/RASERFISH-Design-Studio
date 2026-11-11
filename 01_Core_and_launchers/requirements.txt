@@ -1,0 +1,6 @@
+# install.sh installs these into THIS folder plus BLAST+ and NCBI Datasets.
+biopython==1.86
+numpy>=1.26,<3
+ViennaRNA==2.7.2
+# Optional continuous bigWig tracks (BED peak loading works without this):
+# pyBigWig>=0.3.24,<0.4

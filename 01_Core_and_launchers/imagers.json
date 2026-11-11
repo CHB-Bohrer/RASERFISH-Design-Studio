@@ -1,0 +1,8 @@
+[
+ {"id":"DP7","sequence":"CCGATACGAATA","dye":"Atto565N","source":"User imager inventory"},
+ {"id":"DP3","sequence":"TTAATATCGCGG","dye":"atto647NN (as recorded)","source":"User imager inventory"},
+ {"id":"DP1","sequence":"CTAACGAATCGG","dye":"atto565N","source":"User imager inventory"},
+ {"id":"DP11","sequence":"TATCGTCGTTAG","dye":"atto647NN (as recorded)","source":"User imager inventory"},
+ {"id":"DP2","sequence":"TGTATCGTAACGG","dye":"atto565N","source":"User imager inventory"},
+ {"id":"DP5","sequence":"TGTTATCGACGAT","dye":"atto647NN (as recorded)","source":"User imager inventory"}
+]

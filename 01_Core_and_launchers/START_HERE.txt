@@ -1,0 +1,16 @@
+RASERFISH Design Studio 1.6.1 — source snapshot, 11 November 2026
+
+Read README.md for setup and launch instructions.
+
+If you already have the installed environment and databases:
+  bash start_studio.sh --qc-root /absolute/path/to/existing/Studio
+
+If this is the existing installed folder itself:
+  bash start_studio.sh
+
+For a genuinely new installation only, see the first-install section in README.md.
+Do not move an existing .qc_env or redownload databases just to use this source.
+
+All four upload chunks belong at the SAME repository root.
+The repository contains source and small required fixtures, not your experiments
+or order files. Nothing has changed in the live installation during packaging.
