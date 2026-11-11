@@ -1,0 +1,25 @@
+Packaging note (2026-11-11): This is a dated development record. See README.md for current setup and PACKAGE_NOTES.md for this source snapshot. Paths to private evidence have been omitted; those files are not included.
+
+RASERFISH Design Studio 1.6.1 — performance update, 2026-11-02
+
+Installed behavior
+Standard output now streams every BLAST alignment through a bounded private pipe directly into the unchanged incremental parser and disk-backed interval scoring. It no longer writes each raw alignment batch to a temporary TSV before parsing. SQLite scratch intervals are still used and discarded after exact scores commit. Full audit explicitly retains detailed files as before.
+
+Repeated identical subject registrations are cached in a bounded 4,096-entry cache; every unseen/evicted subject still reaches the authoritative SQLite unique key. Temporary interval indexes are built once after batch ingestion. Distinct-subject cap detection, interval clustering, intended-site classification, all alignments, and scores are preserved.
+
+One candidate per BLAST batch, two BLAST threads, 400+200 candidate budget, all scientific thresholds, annotated RNA screening, individual folding and self-dimer QC are unchanged. Cross-primary analysis remains NOT RUN - USER DISABLED. Orders remain DRAFT. One-active-design locking and existing resource guards remain in force.
+
+A streamed batch cannot commit until all output is parsed and the owned child has a verified COMPLETE/returncode=0 record. Failure, truncation, cancellation, guard stops and partial consumption remain INCOMPLETE. No scientific results are inferred from pipe EOF alone. Source identity includes the streaming module. Old unfinished checkpoints with different source hashes are deliberately not reused; completed historical files are preserved.
+
+Measured four-candidate diagnostic
+Actual installed human and RNA databases, original search flags, two threads, one candidate per batch, three selected candidates plus one repeat-heavy rejected candidate:
+Original: 122.928 seconds.
+Updated: 96.157 seconds (21.78% less elapsed time; 1.28x speedup).
+All 16 per-query SHA256 digests and row counts match; all 2,008,567 raw alignments, exact scores and rejection reasons match. Updated Standard transported 293,371,788 bytes without a raw TSV. This single diagnostic is not a full 600-candidate runtime guarantee.
+Sampled updated process-family RSS peak: 2,162,409,472 bytes (2.01 GiB).
+Sampled updated physical footprint peak: 4,973,205,072 bytes (4.63 GiB), including charged compressed/swapped memory. These are sampled maxima, not proven lifetime peaks; resource limits were not changed.
+
+Additional diagnostic — not enabled in the app
+A positive-proof-only exact-full-arm prescreen evaluated the 600 saved ERRFI1 arms in 39.669 seconds. It proved rejection of 47 candidates under the existing high off-target gate; all 47 were originally rejected, and none of the 489 passing or 103 selected candidates was contradicted. No-proof candidates remained NOT EVALUATED. Those 47 previously consumed about 59 minutes of human-search time and 5 minutes of RNA-search time. This identifies potentially avoidable workload, not a measured whole-design speedup. Enabling early rejection would require explicit NOT RUN labels for remaining checks on rejected candidates. Production early rejection has not been enabled.
+
+No full design or oligo order was started for this update. Settings, environments, reference databases and saved design runs are preserved. Detailed test and comparison evidence accompanies the source backup receipt.

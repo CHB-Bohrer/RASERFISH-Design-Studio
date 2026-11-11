@@ -1,0 +1,64 @@
+Packaging note (2026-11-11): This is a dated development record. See README.md for current setup and PACKAGE_NOTES.md for this source snapshot. Paths to private evidence have been omitted; those files are not included.
+
+RASERFISH Design Studio v1.6.1 — server loss and temporary-cache repair
+16 October 2026
+
+DEMONSTRATED FAILURE
+Run 20261016_111134_cb49ce lost its server (PID 91272) at approximately
+17:55:34 New York time. The worker observed its parent disappearing, marked
+the analysis INCOMPLETE, and stopped its own process group. No Studio or BLAST
+process remained when inspected. The original terminating signal/reason is
+not available; no contemporaneous crash or memory-kill report established it.
+
+All 348 human BLAST subprocesses returned 0. Parsing and receipts completed
+for 347 batches. Batch 348 finished BLAST but was interrupted during parsing.
+All 6,388 recorded memory checks were OK. Peak process-family footprint was
+6.79 GiB, below the 8 GiB guard. The final worker footprint was about 182 MB.
+The previous macOS monitoring permission-race repair recovered three races.
+
+The 347 parsed batches retained 106,011,461 alignments. Their temporary SQLite
+cache grew to 94,797,746,176 bytes. A bounded, read-only query failed with
+"database disk image is malformed". Its old journal_mode=OFF did not protect
+transactions on abrupt shutdown. Standard output had already discarded the
+successfully parsed raw TSVs. Therefore a trustworthy resume from batch 349
+is not available. No old evidence was relabeled complete, reused, or deleted.
+
+CHANGES
+- Durable server lifecycle records include instance/PID/parent/session, port,
+  startup, catchable TERM/HUP/INT, exceptions, and shutdown. SIGKILL cannot run
+  an exit handler; the worker parent-loss watchdog remains active.
+- After restart, the status API can read an explicit saved INCOMPLETE state.
+  Reads are bounded; no old work is restarted, and saved status never grants
+  access to an unverified completed export.
+- Connection failures preserve the last progress message instead of appending
+  repeated interruption lines. They never imply that analysis completed.
+- New alignment caches use rollback journaling and FULL synchronization, with
+  bounded SQLite memory. Lossless payload compression preserves every retained
+  alignment and its exact decoded values. Old damaged caches remain untouched.
+
+Scientific thresholds, DP3 assignment/bounds, all genomic/RNA search flags,
+600-candidate budget, two BLAST threads, spatial selection, individual folding,
+self-dimers, cross-primary OFF/NOT RUN and DRAFT order policy are unchanged.
+No full design was automatically started or resumed.
+
+VALIDATION AND LIMITS
+See verification/server_recovery_regression.txt and
+verification/server_recovery_javascript.txt for final regression results.
+New tests exercise real server HTTP recovery, catchable signals, owned-worker
+termination, interrupted SQLite transactions, exact hit/count parity, bounded
+iteration and UI recovery. Lossless compression measurements are recorded in
+verification/storage_repair_benchmark.json.
+In a 10,000-alignment sample from the previous good DP3 test cache, the complete
+SQLite file decreased from 8,753,152 to 2,674,688 bytes (69.44% smaller), with
+all 10,000 decoded records exactly equal. This sample is not a guarantee of the
+size or runtime of a complete 600-candidate design.
+
+This repair does not establish why the previous server exited and does not
+establish completion of a full 600-candidate design. Retained alignment volume
+can still require substantial disk space. The old 95 GB cache is preserved.
+The repaired server is launched with its own process session and direct disk
+logging, independent of the earlier foreground tool-command pipe.
+
+Your normal manual launcher remains ./start_studio.sh (or Open_Studio.command).
+Starting the app alone does not start a design. Use the running designer's
+address rather than starting another server on an occupied port.

@@ -1,0 +1,115 @@
+Packaging note (2026-11-11): This is a dated development record. See README.md for current setup and PACKAGE_NOTES.md for this source snapshot. Paths to private evidence have been omitted; those files are not included.
+
+RASERFISH Design Studio v1.6.1 — BLAST reliability repair
+16 October 2026
+
+INSTALLATION AND SCOPE
+The existing RASERFISH_Design_Studio_v1_6 folder was verified as v1.6.1.
+All 209 recorded package hashes matched before work. Repairs use that installed
+source. No reconstruction, reinstall, database download, security/backup-software
+change, or full 600-candidate design was performed. Historical runs stay intact.
+
+DEMONSTRATED FINDINGS
+The two specified runs used identical 1,200-query FASTA files (600 candidates).
+Each partial human TSV was 7,149,455,357 bytes, ending at query 168. Their saved
+BLAST launcher discarded the return code and exposed only an empty merged log.
+The exact terminating signal/return code cannot be recovered from those files.
+A matching macOS report for the latest BLAST PID records 41.01 GB footprint.
+A matching earlier Jetsam snapshot accounts for 80,465,821,696 bytes of BLAST
+pages. Old app RSS peaks were only 6.13 and 7.81 GiB, respectively: RSS-only
+monitoring missed substantial charged compressed/swapped memory. These reports
+demonstrate the memory-accounting problem; neither proves the final exit signal.
+The earlier worker also lost its supervisor connection. Its BrokenPipeError is
+evidence of that disconnection, not proof of what originally stopped the server.
+BLAST had not returned successfully, so Python alignment parsing and subsequent
+individual/self folding had not started in these failures. Pairwise folding and
+concurrent runs are not established causes.
+
+DATABASE CHECKS
+Existing BLAST 2.17.0+ executes successfully. Both database-info commands exit 0.
+Human: 705 records / 3,298,430,636 bases. RNA: 186,185 / 718,571,139 bases.
+All 14 index sizes and SHA-256 hashes match the saved manifest, checked with
+bounded 1 MiB reads. Index permissions permit access; over 200 GB disk was free.
+
+REPAIR
+- BLAST now runs one candidate's arm and full-primary query per process. Every
+  successful batch is parsed line by line into the existing disk-backed store
+  before another starts. The 600-candidate budget (400 preferred + 200 extended)
+  is unchanged. This changes execution partitioning, not search sensitivity.
+- Scientific BLAST arguments are unchanged: blastn-short, both strands, no dust
+  or soft masking, word size 7, evalue 1000, reward 1/penalty -3, gap 5/2,
+  max_target_seqs 100000, two threads, and all existing output fields. No new
+  per-chromosome or per-subject HSP limit suppresses additional binding sites.
+- Fresh attempt directories and per-batch commands, query/database identities,
+  hashes, counts and completion receipts prevent interrupted evidence reuse.
+  A search is incomplete unless every requested batch succeeds and parses.
+- Exact executable/arguments, working directory, PID/group, observed return
+  code/signal, separate disk stdout/stderr, bounded tails and explicit guard
+  actions are retained. Unknown exits remain unknown. UI failures name the
+  observed outcome and diagnostic path, even if stderr is empty.
+- The existing 8 GiB RSS cap is supplemented by an 8 GiB macOS physical-footprint
+  cap using libproc, including charged compressed/swapped memory. Available-
+  memory reserve blocking remains OFF. Sampling is periodic, not an OOM guarantee.
+- The shared design lock remains active across local app instances and inherited
+  workers. Owned process groups stop on cancellation, resource failure or lost
+  supervision. Failed diagnostic writes do not disable owned-process cleanup.
+- Failed exports remain incomplete; newly created unpublished archives can be
+  quarantined as INCOMPLETE_EXPORT without loading/recompressing their bytes.
+  Large downloads stream in bounded chunks. Standard output stays compact.
+- Removed obsolete references to the historical 163-probe order.
+
+PRESERVED DP3 CONFIGURATION
+The user clarified this run is DP3. Its saved interval is chr1:8186425-8206424,
+Top (+), 20 kb (local 366425-386424). The prepared settings ZIP preserves every
+saved setting except correcting the stale ERRFI1/DP1 display title to DP3.
+45<Tm<55 C, OligoMiner 2 nM, GC0-76%, adaptive36-42 preferred/90 max,
+5-bp extended spacing; high42 C/0; moderate35 C/10; unresolved-long rejection;
+annotated RNA ON/strong-risk0; whole-gene exclusion OFF; individual folding,
+accessibility0.40 and self-dimers retained; folding42 C/0.39 M sodium;
+cross-primary OFF/NOT RUN, two BLAST threads, Standard output. Spatial search,
+benchmark100, desired minimum50 and the600-candidate budget remain unchanged.
+Existing default/preset files and all old settings/results are preserved.
+
+VALIDATION
+378 Python regression tests passed without skips (62.131 seconds).
+16 JavaScript tests passed, plus JavaScript syntax validation.
+Coverage includes successful commands, empty-output failures, observed SIGTERM,
+spawn failure, guard/cancellation actions, unrelated-process survival, orphaned
+workers, unwritable-journal cleanup, incomplete exports and streamed downloads.
+Real fixture databases verify exact batched/unbatched genomic/RNA HSP parity,
+including extra sites on one chromosome, junction matches and intended-site rules.
+
+Four tiny actual-database searches succeeded with the exact saved settings:
+first candidate human24.73s/RNA4.06s; last-emitted candidate human3.54s/RNA1.01s.
+The first candidate's 698,391 human rows / 86,698,539 bytes are byte-for-byte
+identical to that candidate's prefix in the old monolithic output. This comparison
+does not relabel the old full search as completed evidence.
+The repaired integrated one-candidate DP3 test completed in38.59s:
+human698,391 raw /67,806 retained; RNA76,946 raw /2,433 retained; both exits0.
+All70,239 retained HSPs were disk-backed (64,212,992-byte SQLite store).
+The intended genomic site was recovered (9 allowed HSPs). Real monomer folding,
+accessibility and self-dimer cofold/exact-stem checks ran; cross-primary native
+cofold and stem calls were zero. The candidate correctly failed retained
+specificity thresholds; this test is not a probe order.
+Observed peak process-family physical footprint2.74 GiB; RSS2.27 GiB.
+
+LIMITS
+The exact historic termination cause remains uncertain. Batching and the corrected
+memory guard address demonstrated problems, but no full600-candidate retry was
+started or declared fixed. More process launches may increase runtime. A single
+especially expensive query can still stop under the guard and remain INCOMPLETE.
+
+EVIDENCE
+verification/failure_evidence_audit.json
+verification/repair_full_regression_tests_final.txt
+verification/repair_javascript_tests.txt
+verification/repair_database_executable_checks.json
+verification/repair_actual_query_batch_parity.json
+verification/repair_tiny_actual_database_results.json
+verification/repair_integrated_dp3_candidate.json
+verification/repair_integrated_dp3_memory.jsonl
+verification/prepared_dp3_settings.json
+prepared_settings/DP3_chr1_8186425_8206424_ready.zip
+
+BLAST exit-code reference (only applies when a return code is observed):
+https://www.ncbi.nlm.nih.gov/books/NBK279684/#appendices.Exit_codes

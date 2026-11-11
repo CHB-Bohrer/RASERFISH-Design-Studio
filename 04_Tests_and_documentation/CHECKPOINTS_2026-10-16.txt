@@ -1,0 +1,73 @@
+Packaging note (2026-11-11): This is a dated development record. See README.md for current setup and PACKAGE_NOTES.md for this source snapshot. Paths to private evidence have been omitted; those files are not included.
+
+RASERFISH Design Studio 1.6.1 — save and resume progress
+
+USING SAVED PROGRESS
+New Standard-output designs save completed work automatically. Each completed
+human-genome or annotated-RNA BLAST batch is committed separately, along with
+all retained alignments and subject identifiers. Each candidate's individual
+folding, accessibility, self-dimer and specificity results are also saved.
+The completed local full-arm/junction stage is saved as one checkpoint.
+
+Eligible interruptions now trigger automatic recovery: up to two retries after
+30 seconds and 120 seconds. See AUTOMATIC_RECOVERY_2026-10-16.txt for the launcher,
+cancellation and safety-stop behavior. Manual resume remains available in Step 5
+(Run design): refresh Saved checkpoints, choose the incomplete run and click
+Resume saved progress. Resume uses the saved run's original inputs and scientific
+settings, replacing the displayed controls with those saved values.
+An unfinished batch/check is rerun; verified completed work is reused.
+Candidate generation, selection and final export are rerun. Resume creates a
+new attempt with separate logs and outputs. Earlier failure records stay intact.
+
+WHAT IS VERIFIED
+The saved identity binds the complete configuration and inputs, candidate
+sequences/order, scientific source hashes, Python/QC dependencies, BLAST binary
+and version, and local database paths/index metadata. Large genome files are
+checked by file size, timestamps, inode/device and alias/volume metadata rather
+than content-hashed. Changing these identities refuses reuse.
+
+Completed markers and their hits/subjects share a synchronized SQLite
+transaction. Interrupted transactions are rolled back. On resume, SQLite
+integrity checks and streamed checksums of every committed hit/index field and
+subject identifier validate the evidence without loading it all into memory.
+Validation of a large cache can take time; it does not rerun BLAST.
+
+Saved progress always remains INCOMPLETE. It is not PASS and is not an order.
+Only the existing complete analysis/export checks can finish a run. Cross-
+primary screening stays OFF / NOT RUN - USER DISABLED, individual folding and
+self-dimer checks remain required, and orders remain DRAFT. All DP3 settings,
+the spatially balanced 600-candidate budget, and two BLAST threads are unchanged.
+The existing single-active-design lock also applies to resume.
+
+STORAGE AND LIMITS
+Checkpoints stay in the original run's checkpoints/ directory, with compressed
+retained hits in retained_hits.sqlite. Later attempts reuse that database in
+place; they do not copy the full cache. Checkpoint working data are excluded
+from the result ZIP so Standard output remains compact. Keep the original run
+folder if you need to resume. No old results or caches are automatically deleted.
+
+This first resume implementation supports Standard output. Full audit still
+runs normally, but cannot resume: a fresh run is required to preserve all raw
+audit artifacts. Earlier runs without the new transactional checkpoint format,
+including the damaged 20261016_111134_cb49ce cache, cannot be safely resumed.
+
+Checkpoints limit repeated work after interruption. They do not by themselves
+reduce BLAST memory or the number of retained alignments, establish why the
+previous server exited, or prove completion of a full 600-candidate design.
+See verification/checkpoint_regression.txt, checkpoint_ui_tests.txt and
+checkpoint_real_dp3_resume.json for the actual validation results.
+
+VALIDATION RESULTS
+457 Python regression tests and 35 browser-script tests passed. These include
+SIGKILL during a transaction, parser interruption, corrupted evidence, wrong
+database/inputs/code, exact resumed-result parity, and cross-instance locking.
+
+Two actual saved DP3 candidates (1 and 348) were exercised with the installed
+human and RNA BLAST databases and ViennaRNA. The first attempt deliberately
+stopped after one successful human batch. Resume ran only the three remaining
+search batches and both candidates' monomer/self-dimer checks. A subsequent
+resume made zero BLAST or native folding calls and produced identical scientific
+results. Cross-primary calls were zero. Total diagnostic time was 142.7 seconds;
+peak measured process-family footprint was 4,497,970,528 bytes (4.19 GiB).
+Candidate enumeration was replaced with those two saved candidates for this
+bounded diagnostic; the real 600-candidate policy was not changed or run.

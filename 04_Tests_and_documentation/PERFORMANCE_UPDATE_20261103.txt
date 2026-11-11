@@ -1,0 +1,37 @@
+Packaging note (2026-11-11): This is a dated development record. See README.md for current setup and PACKAGE_NOTES.md for this source snapshot. Paths to private evidence have been omitted; those files are not included.
+
+RASERFISH Design Studio v1.6.1 — performance update, 2026-11-03
+
+This update uses the installed v1.6.1 source and existing environment/databases. Only source, tests and these notes are updated. Settings, reference data, historical runs and order files are preserved. No production design or oligo order was started.
+
+Changes
+- Reuse one BLAST process for four candidates per checkpoint group. For 600 candidates, each database uses 150 launches instead of 600.
+- Explicit child-only BATCH_SIZE controls native query grouping. Queries remain arm then full primary. The threshold is max arm length + 1 when that fits every pair; otherwise it is 1. Thus native input groups contain one candidate pair or a single query. No query, hit, search flag or scientific threshold is dropped.
+- Record resource environment overrides in process diagnostics and batch completion receipts. Parent environment is neither mutated nor dumped into logs.
+- Cache exact complementary-tract metrics, exact-tract Tm and reference alias normalization using bounded sequence-only keys. Candidate-specific classification and policy checks still execute. Alignment caches are cleared when each design ends or fails.
+- Existing bounded streaming, compact scores, one-active-design lock, two BLAST threads, memory/disk guards and child cleanup remain in force.
+- Checkpoint completion still requires full output consumption and successful process exit. The current four-candidate group rolls back on failure and is recomputed on resume. New source identities prevent silent reuse of older unfinished checkpoints.
+
+Measured performance — paired tests on this Mac, actual existing human genome and annotated-RNA databases
+- Low-hit saved queries: 22.459 -> 20.975 seconds (6.6% less elapsed time), 46,776 raw alignments. All per-query/per-candidate byte hashes, counts, source scores and rejection reasons matched.
+- Mixed saved queries, including repeat-heavy candidate: 84.581 -> 82.170 seconds (2.9% less elapsed time), 2,008,567 raw alignments. All per-query/per-candidate byte hashes, counts, source scores and rejection reasons matched.
+- Separate repeated-sequence CPU benchmarks were 2.9–3.9 times faster; that is a component measurement, not whole-design acceleration.
+No full 600-candidate production run was launched. These small timings do not establish an equivalent percentage improvement for all targets. Repetitive regions still require millions of alignments.
+
+Validation
+- 206 focused regression tests passed.
+- 16 further subprocess/native-engine tests passed, including exact arguments and child-only environment, failed subprocesses, resource stops, repeated sites on one chromosome, genomic/RNA search parity, Standard/Full audit equivalence, retained folding/self-dimer checks, and disabled cross-primary calls.
+- Four particularly repetitive saved candidates completed under the unchanged guard in 437.761 seconds. All 12,815,063 raw alignment rows matched original completed-run hashes and exact per-source scores. Peak sampled process-family physical footprint: 6.655 GiB; sampled RSS: 4.289 GiB. Memory measurements are sampled, not a guarantee of every instantaneous peak.
+- Two uncontrolled larger-native-batch negative tests crossed the 8 GiB guard; only owned children were terminated, outputs stayed INCOMPLETE, and no partial scores/checkpoints were committed. Those unbounded grouping strategies are not enabled.
+- Three saved ERRFI1 primaries (36, 48 and 90 nt arms) reproduced native individual folding/accessibility and self-dimer results. Three self-stem searches ran; cross-primary native calls were zero.
+- Within-region and between-region cross-primary interactions remain NOT RUN - USER DISABLED. Order exports remain DRAFT.
+- Independent comparison found the policy, intended-site classification, candidate generation, selection, folding, docking inventory and scientific thresholds unchanged.
+
+Implementation reference
+NCBI query-input implementation consumes whole sequences until the specified base threshold: https://raw.githubusercontent.com/ncbi/ncbi-cxx-toolkit-public/main/src/algo/blast/blastinput/blast_input.cpp
+NCBI blastn batch control: https://raw.githubusercontent.com/ncbi/ncbi-cxx-toolkit-public/main/src/app/blast/blastn_app.cpp
+The installed BLAST 2.17.0+ was verified directly; this update did not replace BLAST or any reference database.
+
+Detailed local verification: <local-path-omitted>
+Exact comparison against saved completion evidence: <local-path-omitted>
+Live application: http://127.0.0.1:8769/

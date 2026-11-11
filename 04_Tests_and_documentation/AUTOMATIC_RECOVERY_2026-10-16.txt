@@ -1,0 +1,79 @@
+Packaging note (2026-11-11): This is a dated development record. See README.md for current setup and PACKAGE_NOTES.md for this source snapshot. Paths to private evidence have been omitted; those files are not included.
+
+RASERFISH Design Studio 1.6.1 — automatic checkpoint recovery
+
+HOW IT WORKS
+New Standard-output designs automatically save progress and recover after an
+eligible interruption. The local server, not the browser, manages recovery.
+It waits 30 seconds before the first retry and 120 seconds before the second.
+Two automatic retries are allowed per explicitly started or manually resumed
+chain. Each retry gets a separate run folder and failure logs, while reusing the
+original checkpoint database in place. The retry count survives server restarts.
+
+Completed BLAST batches and per-primary QC are verified before reuse. An
+unfinished batch/check is repeated. Original inputs, settings, tools, database
+metadata, and saved-evidence checks must match. No search hits are suppressed,
+no thresholds relaxed, and the spatially balanced 600-candidate budget is unchanged.
+Individual folding/accessibility and self-dimers remain required. Cross-primary
+screening remains OFF / NOT RUN - USER DISABLED; every order remains DRAFT.
+
+CANCELLATION AND STOPS
+Cancel stops the current attempt and pending automatic recovery, including from
+a reconnected browser. Intentional designer shutdown does not trigger a restart.
+Memory/resource safety stops, damaged or incompatible evidence, missing files,
+permission errors, and exhausted retries stop incomplete and require review.
+Manual Resume saved progress remains available for an eligible saved checkpoint
+after the problem has been addressed. Old runs are not enrolled automatically.
+Full audit remains non-resumable to preserve raw evidence provenance.
+
+SERVER CRASH RECOVERY AND STARTUP
+Use the existing Open_Studio.command, or from this installed folder run:
+
+    bash start_studio.sh
+
+The launcher reuses an existing local Studio instead of making a duplicate. When
+it owns the server, it can restart that server after an unexpected exit, at the
+same address, at most twice (after 5 and 15 seconds). The restarted server then
+checks whether its enrolled design can resume under the global single-design
+lock. No new design is launched just by opening the app.
+
+The default port is 8769, with a free localhost port selected if needed. To set
+it explicitly and leave browser opening to the caller:
+
+    bash start_studio.sh --port 8769 --no-open
+
+Keep the launcher/Terminal running. It is not a system startup service: a Mac
+reboot or loss of the launcher itself requires opening Studio again. Launching
+studio.py directly still works, but cannot resurrect that server process.
+The browser reconnects to the latest attempt and reloads its saved configuration.
+
+LOGS AND LIMITS
+Each origin run stores automatic_recovery.json and automatic_recovery_events.jsonl.
+The launcher records its exact server command/address and console log path in
+logs/studio_launcher.json; lifecycle events are in logs/studio_launcher.jsonl.
+All failures remain in their original attempt folders. A checkpoint or pending
+retry is never a PASS or a completed analysis. Only successful final export
+commits publish completed results.
+
+This update recovers work after eligible failures. It does not establish the
+cause of the earlier unexplained server exit or prove a complete 600-candidate
+run will finish. Existing environments, databases, settings, and previous results
+are preserved. Changed files are backed up in the installation's backups folder.
+
+VALIDATION
+The actual-engine diagnostic used saved DP3 candidates 1 and 348, the installed
+human/RNA databases, and ViennaRNA. A wrapper limited enumeration to those two
+candidates and injected one failure before the second human batch. Production
+worker/supervisor/controller/guard/export code then performed a 30-second wait
+and started a real replacement worker automatically, with zero manual resumes.
+The saved first batch was skipped; remaining human and RNA searches, two monomer
+folds and two self-dimer checks finished. Cross-primary calls were zero. The
+first attempt stayed INCOMPLETE, and the final diagnostic order stayed DRAFT.
+Peak measured family footprint was 4,465,956,096 bytes (4.16 GiB), with 80 memory
+samples reporting OK; diagnostic elapsed time was 173.77 seconds.
+
+After that diagnostic, final review tightened shutdown ownership and propagation
+of cleanup errors. These changes do not alter search, checkpoint, folding or
+scientific code and are covered by the final regression checks. Exact diagnostic
+source hashes are retained with its report. See verification/automatic_recovery_*
+and verification/auto_recovery_ui_tests.txt for test details and counts.

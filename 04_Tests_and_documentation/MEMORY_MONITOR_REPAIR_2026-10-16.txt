@@ -1,0 +1,45 @@
+Packaging note (2026-11-11): This is a dated development record. See README.md for current setup and PACKAGE_NOTES.md for this source snapshot. Paths to private evidence have been omitted; those files are not included.
+
+RASERFISH Design Studio v1.6.1: macOS memory-monitor permission race
+16 October 2026
+
+FAILURE EVIDENCE
+Run 20261016_105034_38874b stopped because the supervisor could not read the
+memory of PID 85710 (proc_pid_rusage EPERM). All first five human BLAST batches
+returned code 0. Batch 5 used PID 85291 and finished before the monitoring stop.
+Recorded peak process-family physical footprint was 5.095 GiB, below the
+unchanged 8 GiB limit. This stop was not an observed memory-limit breach.
+
+This Mac's /bin/ps is setuid root. All eight small native tests of a live ps
+child reproduced the same permission error, while a live owned Python child
+was measurable. A supervisor can catch the worker's short-lived monitoring
+helper during this privileged interval. The old failure did not retain the
+denied PID's name, so the exact identity of PID 85710 remains unproven.
+
+REPAIR
+For a descendant's permission error, recheck its process lifecycle and retry
+the memory read at most three times, with two 20 ms pauses. Exclude it only
+when a fresh observation confirms it is absent/zombie, or the kernel explicitly
+reports ESRCH. A changed parent, failed lifecycle lookup, persistent live denial,
+or unavailable root memory still fails closed. No process-name exemption, RSS
+fallback, disabled guard, or raised memory limit was introduced.
+
+Recovered races and unresolved errors retain PID, parent, process name,
+original error, lifecycle observations, and outcome in the memory log.
+No scientific thresholds, BLAST flags, 600-candidate budget, DP3 settings,
+single-design locking, or incomplete/DRAFT handling changed. Previous results,
+including this incomplete run, are preserved and are not resumed automatically.
+
+VALIDATION
+42 focused runtime tests passed, including 14 new regression tests. Full-suite
+results are recorded in verification/memory_permission_race_regression_final.txt.
+300 real concurrent worker/supervisor memory samples passed and recovered
+three actual permission races; peak family footprint was 13,337,272 bytes.
+Two tiny real searches using the installed databases and unchanged BLAST flags
+returned code 0: human 5,018 alignments; RNA 4,447 alignments. Both outputs
+matched their previously successful output hashes exactly. Peak observed
+family footprint was 210,471,072 bytes; peak RSS was 1,110,097,920 bytes.
+
+This verifies the monitor repair and small searches; it does not establish
+completion of a full 600-candidate design. No full design was started by this
+repair. The failed run remains INCOMPLETE.

@@ -1,0 +1,66 @@
+Packaging note (2026-11-11): This is a dated development record. See README.md for current setup and PACKAGE_NOTES.md for this source snapshot. Paths to private evidence have been omitted; those files are not included.
+
+RASERFISH Design Studio 1.6.1 — concise score storage repair, 2026-10-18
+
+The installed folder remains RASERFISH_Design_Studio_v1_6. This patch uses
+its verified v1.6.1 source; it does not reinstall the environment or references.
+
+Cause demonstrated: Standard mode retained every accepted genomic/RNA alignment
+and indexes in checkpoint SQLite databases after completion. Two completed run
+stores totalled 109.5 GB. A stale interrupted temporary store added 94.8 GB.
+These were genomic/RNA alignment records, not cross-primary pair evaluations.
+The eight unfinished runs and stale owned scratch stores were removed at the
+user's request. Small settings packages from unfinished runs were preserved in
+prepared_settings/removed_unfinished_runs_20261018.
+
+Concise scores is now the default output option (internal value: standard).
+All original BLAST hits are still searched, parsed incrementally and scored.
+Only current-candidate interval geometry is kept temporarily on disk. Durable
+checkpoints retain exact counts, intended-target classification and completed
+individual folding/self-dimer checks. Completed search batches are committed
+atomically and reused only with matching inputs/tools and verified checksums.
+Partial raw output is never treated as completed evidence.
+
+Full audit is an explicit option before running when alignment records,
+per-base accessibility, detailed structures and pair coordinates are needed.
+It can use substantial disk space. Details removed from old runs cannot be
+reconstructed from their scores; rerunning with Full audit is required.
+
+Completed results now have readable names based on actual imager and genomic
+coordinates, an optional custom run name, run_summary.json, primary_scores.csv,
+and a completed-run picker. Run IDs stay stable internally. RUNS.csv maps IDs
+to names. Individual QC measurements are kept separately, not combined into an
+invented confidence score. Orders remain DRAFT; disabled cross-primary checks
+remain NOT RUN - USER DISABLED, within and between regions.
+
+No scientific thresholds, search sensitivity, intended-site rules, 600-candidate
+search budget, spatial selection rules, two BLAST threads or retained individual
+QC checks were relaxed. Peak native BLAST RAM is not eliminated by this repair.
+
+A 1 GiB free-disk reserve stops only owned work as INCOMPLETE and blocks automatic
+retry after disk exhaustion. Existing process-memory limits and the single-design
+lease remain. The removed available-RAM startup reserve has not been restored.
+
+Changed installed source files are backed up under source_backups. Existing
+.qc_env, reference databases, imagers, saved settings and final probe/order files
+are preserved. No full 600-candidate design was started during this repair.
+
+Validation details and measured storage/memory use are recorded in the local
+storage repair report after the regression and two-candidate real-engine checks.
+
+Validated before installation:
+- 549 Python regression tests passed; 64 JavaScript tests passed.
+- Two saved DP3 candidates used the existing genomic/RNA BLAST engines and DNA
+  folding engine. One deliberate interruption triggered automatic retry, reusing
+  the completed first human batch. Exact scientific scores/rejections matched the
+  previous real-engine run. Two monomer and two self-dimer checks executed;
+  zero cross-primary calls executed.
+- Score checkpoint: 45,056 bytes, versus 362,930,176 bytes previously (99.9876%
+  smaller). Peak physical footprint 4.159 GiB; peak RSS 3.276 GiB; 72 measurements
+  all within guards. Temporary interval and successful raw-search data removed.
+- The diagnostic's original final disk-size assertion used the obsolete database
+  filename. A separate read-only verifier corrected that measurement and repeated
+  the saved-artifact checks without rerunning BLAST; no production bug was found.
+- Three completed installed runs now occupy 6,327,409 bytes including result ZIPs:
+  DP1 chr1:8009019-8029018: 184 selected; DP3 chr1:8186425-8206424: 129 selected;
+  DP11 chr1:7831613-7851612: 77 selected. No selected sequence/order/settings changed.

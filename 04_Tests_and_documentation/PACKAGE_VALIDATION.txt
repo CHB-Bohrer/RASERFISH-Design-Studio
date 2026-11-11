@@ -1,0 +1,39 @@
+RASERFISH Design Studio 1.6.1 — source package validation
+11 November 2026
+
+Final Python suite: 628 discovered; 627 passed, 1 skipped, 0 failures/errors.
+Elapsed: 98.277 seconds. Existing Python 3.11 environment with actual installed
+BLAST and ViennaRNA was reused. Small native-engine fixtures ran as part of the
+suite; no full production target design or database download was started.
+
+JavaScript suite: 89 discovered; 88 passed, 1 skipped, 0 failures.
+Both skips concern optional private saved-experiment fixtures, intentionally not
+included. Synthetic coverage tests and all other checks ran.
+
+Syntax: 58 Python files compiled in memory; four browser JavaScript files and
+four shell launch/setup scripts passed syntax checks. Included JSON parsed.
+
+The initial full suite exposed two stale source-hash subtests for the November 3
+sequence-cache extraction. Comparing to the pre-optimization source backup
+confirmed the original baseline. The packaged test now verifies exact helper
+and wrapper hashes before narrowly normalizing those cache substitutions and
+comparing to the unchanged original baseline. No runtime or scientific-policy
+code was modified. The complete Python suite was then rerun successfully.
+
+Relevant regression coverage includes reference/default parity, strand/docking
+conventions, spatial search, streaming BLAST, compact storage/checkpoints,
+retained folding/self-dimers, disabled cross-primary checks, resource stops,
+worker ownership, recovery, launchers and UI coverage/reporting.
+
+Packaging checks: SHA-256 identity for every unchanged copied file; all runtime
+source, web assets and default input files match the installed snapshot. Narrow
+packaging edits are documented in PACKAGE_SHA256.json. Archives are constructed
+from an explicit file allowlist, excluding test-generated logs and all private
+run/environment/database directories. The archive build checks ZIP CRCs, exact
+file bytes, complete union with no duplicate paths, and browser-upload size/count
+limits. Archive hashes are provided in the separate SHA256SUMS.txt.
+
+No clean-machine installation or new full 600-candidate analysis was attempted.
+The existing live installation, settings, databases and historical results were
+not edited by this packaging work. Historical test/benchmark counts in copied
+release notes describe their original dates, not the checks above.

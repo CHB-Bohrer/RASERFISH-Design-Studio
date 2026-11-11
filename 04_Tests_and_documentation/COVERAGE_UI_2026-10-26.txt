@@ -1,0 +1,29 @@
+Packaging note (2026-11-11): This is a dated development record. See README.md for current setup and PACKAGE_NOTES.md for this source snapshot. Paths to private evidence have been omitted; those files are not included.
+
+RASERFISH Design Studio v1.6.1 — coverage interface update, 26 October 2026
+
+Open 6. Compare results > Coverage & transcripts.
+The Saved view menu includes completed experiments and individual completed runs.
+Select all regions or one region, switch from gene overview to individual
+transcripts, or hide transcript tracks. Download the visible plot as PNG, SVG,
+or a self-contained HTML view. New offline result downloads include this panel.
+
+Plots show 1-kb site-center counts, individual binding sites, the region midpoint,
+mean site position, largest internal gap, and annotated transcript/exon tracks.
+Mean offset is in reference-local coordinates, not a measured 3D centroid error.
+Transcript annotation does not demonstrate expression or actual RNA binding.
+Missing or incomplete annotation is reported as unknown rather than zero.
+Orders remain DRAFT. Disabled cross-primary analysis remains NOT RUN - USER DISABLED.
+
+The panel reads bounded saved results and annotation assets; it does not start
+BLAST, folding, candidate generation, annotation downloads, or a design run.
+Historical results/viewers, scientific thresholds, saved settings, references,
+and the existing environment are preserved. Combined views of independently
+screened runs never imply a between-run interaction PASS.
+
+Validation: 89 JavaScript tests and 41 Python saved-data/backend regression
+tests passed; results are recorded in verification logs. Six-target parity: 594 saved binding sites
+(103, 80, 89, 80, 98, 144) and 64 transcript-region overlaps. Live browser checks
+covered individual/combined views, region filtering, isoforms, transcript hiding,
+PNG/SVG/HTML exports, and the self-contained offline viewer. Source backups and
+installation hashes are recorded in the source_backups installation receipt.
